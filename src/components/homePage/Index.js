@@ -15,12 +15,18 @@ const Home = () => {
         setSignUpErr,
     } = useContext(RecipeContext);
 
-    const handleSignUp = () => {
+    const handleSignUp = (e) => {
         setSignUpErr(signUp);
         if (signUp.password !== signUp.verifyPassword) {
+          e.preventDefault();
           alert("şifreler uyuşmuyor");
           setIsLogin(true);
-        } else {
+        } 
+        else if(signUpErr.name === false) {
+          e.preventDEfault();
+          setIsLogin(true)
+        }
+        else {
           if (Object.values(signUp).every((value) => value)) {
             setSignUp({ name: "", password: "", verifyPassword: "" });
             setIsLogin(false);
@@ -121,7 +127,7 @@ const Home = () => {
           </form>
           <div>
             <Link
-              to={isLogin ? "/Login" : "/"}
+              to={isLogin ? "/Login" : null}
               onClick={handleSignUp}
               className="register"
             >

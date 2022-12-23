@@ -31,6 +31,18 @@ function App() {
     loginErr,
     setLoginErr,
   };
+  /* 1-Her sayfanın kendine ayrı css'i var
+     2-useContext kullanmayı bir youtube videosu refereans alınarak yapılmıştır başlangıç kısmı src içerisndeki Context.js kısmıdır
+     3-framer motion kütüphanesi indirilmiştir sebebi sayfalar arasında animasyonlu geçişlerin olması için ve elementlere çeşitle animasyonlar vermek içindir
+     4-App.js ' de sabit kalması için sadece navbar duruyor onun haricindeki routerları yani sayfaları <AnimatedRoutes /> adlı componentde topladım
+     sonra onu App.js 'e import ettim 
+     5-useContext kullanırken bütün stateleri App.js de belirleyip diğer komponentlere ihtiyaç olanları çektim. Context.js dosyasında 
+     adını belirlemiş olduğumuz conteximiz RecipeContext'dir bu yüzden ana div yerine <RecipeContext tag ile sarmallayarak elementleri arasında tuttuk ki bütün verilerimizi
+     bütün componentlere uygulayabilelim....
+     6-Bütün statelerimizi App.js den aldık sonra onları bir değişken(data) içerisinde topladık bunu bizim statelerimizin depo edildiği bir data
+     dosyası olarak düşünebiliriz. sonra bu sarmalladığımız Recipe.Context ana divine value olarak verdik. Bu arada buradaki provider özel bir keyword'dür
+
+  */
   return (
     <RecipeContext.Provider value={data}>
       <NavBar />

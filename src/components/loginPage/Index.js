@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RecipeContext, useContext } from "../../Context";
 import Fruits from "../loginPage/home-food-image.jpg";
 import { Link } from "react-router-dom";
@@ -25,6 +25,8 @@ const stil = {
 const LoginScreen = () => {
 
   const { login, setLogin, loginErr, setLoginErr } = useContext(RecipeContext);
+  const [users, setUsers] = useState([])
+  const [incorrectEntry, setIncorrectEntry] = useState(false)
 
   const handleSetInputs = (value) => {
     setLogin((prevState) => ({
@@ -33,29 +35,33 @@ const LoginScreen = () => {
     }))
   }
 
-  const [token, setToken] = useState({ name: '' })
-  const [incorrectEntry, setIncorrectEntry] = useState(false)
-  const handleLogin = (e) => {
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:4600/users')
+        setUsers(response.data.map(user => user))
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getUsers();
+  }, [])
 
+  const loginControl = () => {
+    if (users.some(user => user.name === login.name) && users.some(user => user.password === login.password)) {
+      return true;
+    } else { return false; }
+  }
+
+  const handleLogin = (e) => {
     setLoginErr(login);
     if (Object.values(login).every((value) => value)) {
       setLogin({ name: "", password: "" })
-      const getUsers = async () => {
-        try {
-          const response = await axios.get('http://localhost:4600/users')
-          const userNames = response.data.map(userObject => userObject.name)
-          const userPasswords = response.data.map(userObject => userObject.password)
-          if (userNames.includes(login.name) && userPasswords.includes(login.password)) {
-            setToken({ name: login.name });
-            setIncorrectEntry(false);
-          } else {
-            setIncorrectEntry(true);
-          }
-        } catch (error) {
-          console.error(error);
-        }
+      if (loginControl()) {
+        setIncorrectEntry(false);
+      } else {
+        setIncorrectEntry(true);
       }
-      getUsers()
     }
   }
 
@@ -107,7 +113,8 @@ const LoginScreen = () => {
           </form>
           {incorrectEntry ? <p>Email and password don't match !</p> : null}
           <div>
-            <Link to='' onClick={handleLogin} className="logging">
+            <Link to={loginControl() && `/${login.name}`}
+              onClick={handleLogin} className="logging">
               Login
             </Link>
             <Link to="/" className="anchor-btn">Back</Link>

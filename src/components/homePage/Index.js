@@ -4,42 +4,49 @@ import { motion } from "framer-motion";
 import { RecipeContext, useContext } from "../../Context";
 import { Link } from "react-router-dom";
 import "./Home.css"
+import axios from "axios";
 
 const Home = () => {
-    const {
-        signUp,
-        setSignUp,
-        isLogin,
-        setIsLogin,
-        signUpErr,
-        setSignUpErr,
-    } = useContext(RecipeContext);
+  const {
+    signUp,
+    setSignUp,
+    isLogin,
+    setIsLogin,
+    signUpErr,
+    setSignUpErr,
+  } = useContext(RecipeContext);
 
-    const handleSignUp = (e) => {
-        setSignUpErr(signUp);
-        if (signUp.password !== signUp.verifyPassword) {
-          e.preventDefault();
-          alert("şifreler uyuşmuyor");
-          setIsLogin(true);
-        } 
-        else if(signUpErr.name === false) {
-          e.preventDEfault();
-          setIsLogin(true)
-        }
-        else {
-          if (Object.values(signUp).every((value) => value)) {
-            setSignUp({ name: "", password: "", verifyPassword: "" });
-            setIsLogin(false);
-          }
-        }
-      };
-      const handleSetSignUpInputs = (value) => {
-        setSignUp((prevState) => ({
-          ...prevState,
-          ...value,
-        }));
-      };
-    
+  const handleSignUp = (e) => {
+
+    const creatingUser = async () => {
+      await axios.post('http://localhost:4600/users', signUp)
+    }
+
+    setSignUpErr(signUp);
+    if (signUp.password !== signUp.verifyPassword) {
+      e.preventDefault();
+      alert("şifreler uyuşmuyor");
+      setIsLogin(true);
+    }
+    else if (signUpErr.name === false) {
+      e.preventDEfault();
+      setIsLogin(true)
+    }
+    else {
+      if (Object.values(signUp).every((value) => value)) {
+        creatingUser();
+        setSignUp({ name: "", password: "", verifyPassword: "" });
+        setIsLogin(false);
+      }
+    }
+  };
+  const handleSetSignUpInputs = (value) => {
+    setSignUp((prevState) => ({
+      ...prevState,
+      ...value,
+    }));
+  };
+
 
   return (
     <div>

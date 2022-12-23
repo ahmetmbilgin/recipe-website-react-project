@@ -14,6 +14,12 @@
       "name": "merve",
       "password": "perk",
       "id": 3
+    },
+    {
+      "name": "asd",
+      "password": "123",
+      "verifyPassword": "123",
+      "id": 4
     }
   ]
 }

@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "json-server -p 4600 --delay 500 --watch assets/data/db.json"
   },
   "eslintConfig": {
     "extends": [

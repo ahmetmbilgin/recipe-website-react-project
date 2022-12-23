@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "ahmet",
+      "password": "bilgin",
+      "id": 1
+    },
+    {
+      "name": "furkan",
+      "password": "telli",
+      "id": 2
+    },
+    {
+      "name": "merve",
+      "password": "arıkan",
+      "id": 3
+    }
+  ]
+}

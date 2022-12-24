@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Fruits from "../homePage/home-food-image.jpg";
 import { motion } from "framer-motion";
 import { RecipeContext, useContext } from "../../Context";
@@ -14,29 +14,39 @@ const Home = () => {
     setIsLogin,
     signUpErr,
     setSignUpErr,
+    users,
+    usersFecth,
+    setUsersFetch,
   } = useContext(RecipeContext);
 
+  const [userNameError, setUserNameError] = useState(false);
   const handleSignUp = (e) => {
 
     const creatingUser = async () => {
-      await axios.post('http://localhost:4600/users', signUp)
+      await axios.post('http://localhost:4600/users', signUp);
     }
 
     setSignUpErr(signUp);
     if (signUp.password !== signUp.verifyPassword) {
       e.preventDefault();
-      alert("şifreler uyuşmuyor");
+      alert("Şifreler uyuşmuyor");
       setIsLogin(true);
     }
     else if (signUpErr.name === false) {
       e.preventDEfault();
-      setIsLogin(true)
+      setIsLogin(true);
     }
     else {
       if (Object.values(signUp).every((value) => value)) {
-        creatingUser();
-        setSignUp({ name: "", password: "", verifyPassword: "" });
-        setIsLogin(false);
+        if (users.some(user => user.name === signUp.name)) {
+          setUserNameError(true);
+        } else {
+          usersFecth ? setUsersFetch(false) : setUsersFetch(true)
+          creatingUser();
+          setSignUp({ name: "", password: "", verifyPassword: "" });
+          setIsLogin(false);
+          setUserNameError(false);
+        }
       }
     }
   };
@@ -132,6 +142,7 @@ const Home = () => {
               </p>
             )}
           </form>
+          {userNameError ? <p>Username already taken!</p> : null}
           <div>
             <Link
               to={isLogin ? "/Login" : null}

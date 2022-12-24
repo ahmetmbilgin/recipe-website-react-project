@@ -24,8 +24,8 @@ const stil = {
 
 const LoginScreen = () => {
 
-  const { login, setLogin, loginErr, setLoginErr } = useContext(RecipeContext);
-  const [users, setUsers] = useState([])
+  const { login, setLogin, loginErr, setLoginErr, users } = useContext(RecipeContext);
+
   const [incorrectEntry, setIncorrectEntry] = useState(false)
 
   const handleSetInputs = (value) => {
@@ -35,17 +35,7 @@ const LoginScreen = () => {
     }))
   }
 
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:4600/users')
-        setUsers(response.data.map(user => user))
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getUsers();
-  }, [])
+
 
   const loginControl = () => {
     if (users.some(user => user.name === login.name) && users.some(user => user.password === login.password)) {

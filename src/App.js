@@ -1,8 +1,9 @@
 import "./App.css";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import { RecipeContext } from "./Context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./components/navigationBar/Index";
+import axios from "axios";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -18,6 +19,20 @@ function App() {
   });
   const [login, setLogin] = useState({ name: "", password: "" });
   const [loginErr, setLoginErr] = useState({ name: true, password: true });
+  const [users, setUsers] = useState([]);
+  const [usersFecth, setUsersFetch] = useState(true);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:4600/users')
+        setUsers(response.data.map(user => user))
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getUsers();
+  }, [usersFecth])
 
   const data = {
     isLogin,
@@ -30,6 +45,9 @@ function App() {
     setSignUpErr,
     loginErr,
     setLoginErr,
+    users,
+    usersFecth,
+    setUsersFetch,
   };
   /* 1-Her sayfanın kendine ayrı css'i var
      2-useContext kullanmayı bir youtube videosu refereans alınarak yapılmıştır başlangıç kısmı src içerisndeki Context.js kısmıdır

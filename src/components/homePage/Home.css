@@ -18,7 +18,8 @@
     justify-content: right;
     margin: 1rem 0;
 }
-.signUp-div > form {
+
+.signUp-div>form {
     display: flex;
     flex-direction: column;
     width: 15vw;
@@ -28,8 +29,15 @@
     height: 200px;
     box-shadow: 1px 4px 14px black;
 }
+
+.signUp-div>p {
+    margin-top: 15px;
+    color: red;
+    font-weight: 700;
+}
+
 .signUp-div input {
-    margin:auto;
+    margin: auto;
     color: whitesmoke;
     align-items: center;
     width: 10vw;
@@ -38,14 +46,16 @@
     background-color: black;
     box-shadow: 1px 4px 9px black;
 }
+
 .signUp-div input:focus {
     box-shadow: 0px 0px 10px white
 }
-.register{
+
+.register {
     display: flex;
     justify-content: center;
     margin: 1rem auto;
-    text-decoration:none;
+    text-decoration: none;
     text-align: center;
     color: whitesmoke;
     width: 10vw;
@@ -53,25 +63,29 @@
     border-radius: 5px;
     box-shadow: 1px 4px 14px black;
 }
+
 .register:hover {
     background-color: rgb(99, 97, 97);
     transition: 0.5s;
 }
+
 .register:active {
     background-color: white;
     color: black;
     border: 1px black solid;
     transition: 0.2s;
 }
+
 .anchor-btn {
     display: flex;
     text-align: center;
     justify-content: center;
-    text-decoration:none;
+    text-decoration: none;
     margin: auto;
     font-size: 1.0vw;
     color: black;
 }
+
 .anchor-btn:active {
     text-decoration: underline;
 }

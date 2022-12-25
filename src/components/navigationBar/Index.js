@@ -4,7 +4,7 @@ import "./Navigation.css"
 const NavBar = () => {
   return (
     <div className='navigation-bar'>
-          <img className='logo' alt='logo' src='./images/recipe-book.png' />  
+          <img className='logo' alt='logo' src='../images/recipe-book.png' />  
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { RecipeContext, useContext } from "../../Context";
 import Fruits from "../loginPage/home-food-image.jpg";
 import { Link } from "react-router-dom";
@@ -102,7 +102,7 @@ const LoginScreen = () => {
           </form>
           {incorrectEntry ? <p>Email and password don't match !</p> : null}
           <div>
-            <Link to={loginControl() && `/${login.name}`}
+            <Link to={loginControl() && `/user/${login.name}`}
               onClick={handleLogin} className="logging">
               Login
             </Link>

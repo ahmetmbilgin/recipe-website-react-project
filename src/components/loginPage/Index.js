@@ -4,7 +4,6 @@ import Fruits from "../loginPage/home-food-image.jpg";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import "./Login.css"
-import axios from 'axios';
 
 const stil = {
   picture: {

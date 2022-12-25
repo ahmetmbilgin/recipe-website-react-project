@@ -52,64 +52,10 @@
       "id": 9
     },
     {
-      "name": "1",
-      "password": "1",
-      "verifyPassword": "1",
+      "name": "Muhammed Furkan",
+      "password": "2324",
+      "verifyPassword": "2324",
       "id": 10
-    },
-    {
-      "name": "ahmet5",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 11
-    },
-    {
-      "name": "ahmet6",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 12
-    },
-    {
-      "name": "ahmet61",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 13
-    },
-    {
-      "name": "al",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 14
-    },
-    {
-      "name": "a",
-      "password": "a",
-      "verifyPassword": "a",
-      "id": 15
-    },
-    {
-      "name": "ah",
-      "password": "ah",
-      "verifyPassword": "ah",
-      "id": 16
-    },
-    {
-      "name": "ahm",
-      "password": "ah",
-      "verifyPassword": "ah",
-      "id": 17
-    },
-    {
-      "name": "ahmet12",
-      "password": "1",
-      "verifyPassword": "1",
-      "id": 18
-    },
-    {
-      "name": "ahme",
-      "password": "aaa",
-      "verifyPassword": "aaa",
-      "id": 19
     }
   ]
 }

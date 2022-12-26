@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import Fruits from "../homePage/home-food-image.jpg";
+import Fruits from '../images/fruits.jpg'
 import { motion } from "framer-motion";
 import { RecipeContext, useContext } from "../../Context";
 import { Link } from "react-router-dom";
-import "./Home.css"
+import "./style.css"
 import axios from "axios";
+
+export const stil = {
+  h2: {
+    margin: "1rem",
+    position: "absolute",
+    bottom: "100%",
+  }
+}
 
 const Home = () => {
   const {
@@ -57,36 +65,24 @@ const Home = () => {
     }));
   };
 
-
   return (
     <div>
-      <div
-        style={{
-          backgroundImage: `url(${Fruits})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "left",
-          width: "50%  ",
-          height: "100vh",
-          backgroundSize: "cover",
-        }}
+      <div className="picture-div"
+        style={{ backgroundImage: `url(${Fruits})` }}
       ></div>
       <motion.div
         className="home"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        exit={{ opacity: 0 }}
+        transition={{ duration: 0 }}
+        exit={{ opacity: 0.5 }}
       >
         <div className="signUp-div">
           <form>
             <motion.h2
               initial={{ x: -200 }}
               animate={{ x: 0 }}
-              style={{
-                margin: "1rem",
-                position: "absolute",
-                bottom: "100%",
-              }}
+              style={stil.h2}
             >
               Welcome To Among Us
             </motion.h2>
@@ -99,11 +95,11 @@ const Home = () => {
             {signUpErr.name ? (
               ""
             ) : (
-              <p style={{ color: "wheat", fontSize: "0.7vw" }}>
-                This are shouldnt be empty
+              <p>
+                This are shouldnt be empty !
               </p>
             )}
-            <hr style={{ borderColor: "darkgray" }} />
+            <hr />
             <input
               onChange={(e) =>
                 handleSetSignUpInputs({ password: e.target.value })
@@ -115,11 +111,11 @@ const Home = () => {
             {signUpErr.password ? (
               ""
             ) : (
-              <p style={{ color: "wheat", fontSize: "0.7vw" }}>
-                This are shouldnt be empty
+              <p>
+                This are shouldnt be empty !
               </p>
             )}
-            <hr style={{ borderColor: "darkgray" }} />
+            <hr />
             <input
               onChange={(e) =>
                 handleSetSignUpInputs({ verifyPassword: e.target.value })
@@ -131,14 +127,8 @@ const Home = () => {
             {signUpErr.verifyPassword ? (
               ""
             ) : (
-              <p
-                style={{
-                  color: "wheat",
-                  fontSize: "0.7vw",
-                  paddingBottom: "1rem",
-                }}
-              >
-                This are shouldnt be empty
+              <p>
+                This are shouldnt be empty !
               </p>
             )}
           </form>
@@ -151,7 +141,14 @@ const Home = () => {
             >
               Register
             </Link>
-            <Link to="/Login" className="anchor-btn">
+            <Link to="/Login" onClick={() => {
+              setSignUp({ name: "", password: "", verifyPassword: "" });
+              setSignUpErr({
+                name: true,
+                password: true,
+                verifyPassword: true,
+              })
+            }} className="anchor-btn">
               I already have an account
             </Link>
           </div>

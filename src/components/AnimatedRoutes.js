@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Home from "./homePage/Index";
-import LoginScreen from "./loginPage/Index";
-import User from "./UserPage/Index";
+import User from "../pages/userPage/index";
+import LoginScreen from "../pages/loginPage/index";
+import Home from "../pages/homePage/index";
 
 const AnimatedRoutes = () => {
 

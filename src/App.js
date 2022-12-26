@@ -2,7 +2,7 @@ import "./App.css";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import { RecipeContext } from "./Context";
 import { useEffect, useState } from "react";
-import NavBar from "./components/navigationBar/Index";
+import NavBar from "./components/navigationBar/index";
 import axios from "axios";
 
 function App() {

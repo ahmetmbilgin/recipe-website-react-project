@@ -1,25 +1,10 @@
 import React, { useState } from 'react'
 import { RecipeContext, useContext } from "../../Context";
-import Fruits from "../loginPage/home-food-image.jpg";
+import Fruits from '../images/fruits.jpg'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-import "./Login.css"
-
-const stil = {
-  picture: {
-    backgroundImage: `url(${Fruits})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "left",
-    width: "50%",
-    height: "100vh",
-    backgroundSize: "cover",
-  },
-  h2: {
-    margin: "1rem",
-    position: "absolute",
-    bottom: "100%",
-  }
-}
+import "./style.css"
+import { stil } from '../homePage/index';
 
 const LoginScreen = () => {
 
@@ -33,8 +18,6 @@ const LoginScreen = () => {
       ...value
     }))
   }
-
-
 
   const loginControl = () => {
     if (users.some(user => user.name === login.name) && users.some(user => user.password === login.password)) {
@@ -55,13 +38,13 @@ const LoginScreen = () => {
   }
 
   return (
-    <div style={stil.picture}>
+    <div className='picture-div' style={{ backgroundImage: `url(${Fruits})` }}>
       <motion.div
         className="loginPage"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0 }}
+        exit={{ opacity: 0.5 }}
       >
         <div className="login-div">
           <form>
@@ -82,7 +65,7 @@ const LoginScreen = () => {
               ""
             ) : (
               <p className='error'>
-                This are shouldnt be empty
+                This are shouldnt be empty !
               </p>
             )}
             <hr style={{ borderColor: "darkgray" }} />
@@ -96,7 +79,7 @@ const LoginScreen = () => {
               ""
             ) : (
               <p className='error'>
-                This are shouldnt be empty
+                This are shouldnt be empty !
               </p>
             )}
           </form>
@@ -106,7 +89,13 @@ const LoginScreen = () => {
               onClick={handleLogin} className="logging">
               Login
             </Link>
-            <Link to="/" className="anchor-btn">Back</Link>
+            <Link to="/" onClick={() => {
+              setLoginErr({
+                name: true,
+                password: true,
+              })
+              setLogin({ name: "", password: "" })
+            }} className="anchor-btn">Back</Link>
           </div>
         </div>
       </motion.div>

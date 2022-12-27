@@ -4,3 +4,12 @@
     box-sizing:border-box;
 }
 
+.user-info {
+    position: absolute;
+    top:10%;
+    width: 100%;
+    border-top-color: whitesmoke ;
+    background-color: black;
+    text-align: center;
+    color: whitesmoke;
+}

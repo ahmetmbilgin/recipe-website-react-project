@@ -16,46 +16,21 @@
       "id": 3
     },
     {
-      "name": "asd",
-      "password": "123",
-      "verifyPassword": "123",
+      "name": "furkan",
+      "password": "2345",
       "id": 4
     },
     {
-      "name": "ahmet1",
-      "password": "123",
-      "verifyPassword": "123",
+      "name": "Furkan",
+      "password": "Furkan23",
+      "verifyPassword": "Furkan23",
       "id": 5
     },
     {
-      "name": "ahmet1",
-      "password": "qwe",
-      "verifyPassword": "qwe",
+      "name": "Ömer",
+      "password": "2354",
+      "verifyPassword": "2354",
       "id": 6
-    },
-    {
-      "name": "ahmet1",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 7
-    },
-    {
-      "name": "mehmet2",
-      "password": "mehmet2",
-      "verifyPassword": "mehmet2",
-      "id": 8
-    },
-    {
-      "name": "mehmet2",
-      "password": "qwe",
-      "verifyPassword": "qwe",
-      "id": 9
-    },
-    {
-      "name": "Muhammed Furkan",
-      "password": "2324",
-      "verifyPassword": "2324",
-      "id": 10
     }
   ]
 }

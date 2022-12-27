@@ -83,7 +83,7 @@ const LoginScreen = () => {
               </p>
             )}
           </form>
-          {incorrectEntry ? <p>Email and password don't match !</p> : null}
+          {incorrectEntry ? <p>Name and password don't match !</p> : null}
           <div>
             <Link to={loginControl() && `/user/${login.name}`}
               onClick={handleLogin} className="logging">

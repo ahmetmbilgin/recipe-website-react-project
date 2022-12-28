@@ -77,82 +77,88 @@ const Home = () => {
         transition={{ duration: 0 }}
         exit={{ opacity: 0.5 }}
       >
-        <div className="signUp-div">
-          <form>
-            <motion.h2
-              initial={{ x: -200 }}
-              animate={{ x: 0 }}
-              style={stil.h2}
-            >
-              Welcome To Among Us
-            </motion.h2>
-            <input
-              onChange={(e) => handleSetSignUpInputs({ name: e.target.value })}
-              type="text"
-              placeholder="name"
-              value={signUp.name}
-            />
-            {signUpErr.name ? (
-              ""
-            ) : (
-              <p>
-                This are shouldnt be empty !
-              </p>
-            )}
-            <hr />
-            <input
-              onChange={(e) =>
-                handleSetSignUpInputs({ password: e.target.value })
-              }
-              type="password"
-              placeholder="password"
-              value={signUp.password}
-            />
-            {signUpErr.password ? (
-              ""
-            ) : (
-              <p>
-                This are shouldnt be empty !
-              </p>
-            )}
-            <hr />
-            <input
-              onChange={(e) =>
-                handleSetSignUpInputs({ verifyPassword: e.target.value })
-              }
-              type="password"
-              placeholder="verify password"
-              value={signUp.verifyPassword}
-            />
-            {signUpErr.verifyPassword ? (
-              ""
-            ) : (
-              <p>
-                This are shouldnt be empty !
-              </p>
-            )}
-          </form>
-          {userNameError ? <p>Username already taken!</p> : null}
-          <div>
-            <Link
-              to={isLogin ? "/Login" : null}
-              onClick={handleSignUp}
-              className="register"
-            >
-              Register
-            </Link>
-            <Link to="/Login" onClick={() => {
-              setSignUp({ name: "", password: "", verifyPassword: "" });
-              setSignUpErr({
-                name: true,
-                password: true,
-                verifyPassword: true,
-              })
-            }} className="anchor-btn">
-              I already have an account
-            </Link>
-          </div>
-        </div>
+        {localStorage.getItem("name") ?
+
+        //Üye girişi varsa aşağıdaki fragmentların arasına homePage'de nelerin gösterileceği yazılacak
+          <></> :
+          <>
+            <div className="signUp-div">
+              <form>
+                <motion.h2
+                  initial={{ x: -200 }}
+                  animate={{ x: 0 }}
+                  style={stil.h2}
+                >
+                  Welcome To Among Us
+                </motion.h2>
+                <input
+                  onChange={(e) => handleSetSignUpInputs({ name: e.target.value })}
+                  type="text"
+                  placeholder="name"
+                  value={signUp.name}
+                />
+                {signUpErr.name ? (
+                  ""
+                ) : (
+                  <p>
+                    This are shouldnt be empty !
+                  </p>
+                )}
+                <hr />
+                <input
+                  onChange={(e) =>
+                    handleSetSignUpInputs({ password: e.target.value })
+                  }
+                  type="password"
+                  placeholder="password"
+                  value={signUp.password}
+                />
+                {signUpErr.password ? (
+                  ""
+                ) : (
+                  <p>
+                    This are shouldnt be empty !
+                  </p>
+                )}
+                <hr />
+                <input
+                  onChange={(e) =>
+                    handleSetSignUpInputs({ verifyPassword: e.target.value })
+                  }
+                  type="password"
+                  placeholder="verify password"
+                  value={signUp.verifyPassword}
+                />
+                {signUpErr.verifyPassword ? (
+                  ""
+                ) : (
+                  <p>
+                    This are shouldnt be empty !
+                  </p>
+                )}
+              </form>
+              {userNameError ? <p>Username already taken!</p> : null}
+              <div>
+                <Link
+                  to={isLogin ? "/Login" : null}
+                  onClick={handleSignUp}
+                  className="register"
+                >
+                  Register
+                </Link>
+                <Link to="/Login" onClick={() => {
+                  setSignUp({ name: "", password: "", verifyPassword: "" });
+                  setSignUpErr({
+                    name: true,
+                    password: true,
+                    verifyPassword: true,
+                  })
+                }} className="anchor-btn">
+                  I already have an account
+                </Link>
+              </div>
+            </div>
+          </>}
       </motion.div>
     </div>
   );

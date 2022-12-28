@@ -20,7 +20,7 @@ const LoginScreen = () => {
   }
 
   const loginControl = () => {
-    if (users.some(user => user.name === login.name) && users.some(user => user.password === login.password)) {
+    if (users.some(user => user.name === login.name && user.password === login.password)) {
       return true;
     } else { return false; }
   }

@@ -50,9 +50,8 @@ const LoginScreen = () => {
         {localStorage.getItem("name") ?
 
           //Üye girişi varsa aşağıdaki fragmentların arasına loginPage'de nelerin gösterileceği yazılacak
-          <></> :
           <>
-            <div className="login-div">
+                      <div className="login-div">
               <form>
                 <motion.h2
                   initial={{ x: -100 }}
@@ -103,7 +102,9 @@ const LoginScreen = () => {
                   setLogin({ name: "", password: "" })
                 }} className="anchor-btn">Back</Link>
               </div>
-            </div>
+            </div></> :
+          <>
+
           </>}
       </motion.div>
     </div>

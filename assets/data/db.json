@@ -31,6 +31,12 @@
       "password": "2354",
       "verifyPassword": "2354",
       "id": 6
+    },
+    {
+      "name": "Nakro",
+      "password": "kerem",
+      "verifyPassword": "kerem",
+      "id": 7
     }
   ]
 }

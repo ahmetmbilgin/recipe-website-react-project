@@ -13,7 +13,7 @@ const User = () => {
   setCurrentUser(id)
   return (
     <div className="user-info">
-
+      
     </div>
   );
 };

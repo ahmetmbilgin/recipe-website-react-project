@@ -1,5 +1,5 @@
 {
-  "name": "recipe-website-react-project",
+  "name": "tester",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,10 +7,12 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
-    "framer-motion": "^8.0.2",
+    "mobx": "^6.7.0",
+    "mobx-react": "^7.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.0",
+    "react-responsive-modal": "^6.4.1",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -19,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "json-server -p 4600 --delay 10 --watch assets/data/db.json"
+    "api": "json-server -p 4600 --delay 1000 --watch assets/data/db.json"
   },
   "eslintConfig": {
     "extends": [

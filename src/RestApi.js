@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://localhost:4600/user/';
+const url = 'http://localhost:4600/users/';
 
 class RestApi {
     async getUser(username) {

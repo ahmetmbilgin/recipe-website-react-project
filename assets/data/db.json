@@ -1,48 +1,12 @@
 {
   "users": [
     {
-      "name": "ahmet",
-      "password": "bilgin",
+      "username": "ahmetmb",
+      "password": "12345",
+      "name": "Ahmet Muhiddin",
+      "surname": "Bilgin",
+      "email": "ahmet.m.bilgin@hotmail.com",
       "id": 1
-    },
-    {
-      "name": "furkan",
-      "password": "telli",
-      "id": 2
-    },
-    {
-      "name": "merve",
-      "password": "perk",
-      "id": 3
-    },
-    {
-      "name": "furkan",
-      "password": "2345",
-      "id": 4
-    },
-    {
-      "name": "Furkan",
-      "password": "Furkan23",
-      "verifyPassword": "Furkan23",
-      "id": 5
-    },
-    {
-      "name": "Ömer",
-      "password": "2354",
-      "verifyPassword": "2354",
-      "id": 6
-    },
-    {
-      "name": "Nakro",
-      "password": "kerem",
-      "verifyPassword": "kerem",
-      "id": 7
-    },
-    {
-      "name": "Fatih",
-      "password": "246246",
-      "verifyPassword": "246246",
-      "id": 8
     }
   ]
 }

@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./style.css"
 import { useParams, useNavigate } from "react-router-dom";
-import { RecipeContext, useContext } from "../../Context";
+import { RecipeContext } from "../../Context";
 import { motion } from "framer-motion";
 
 const User = () => {

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./style.css"
-import { RecipeContext, useContext } from '../../Context'
+import { RecipeContext } from '../../Context'
 import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 const NavBar = () => {

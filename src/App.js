@@ -1,57 +1,58 @@
 import "./App.css";
 import AnimatedRoutes from "./components/AnimatedRoutes";
-import { RecipeContext } from "./Context";
-import { useEffect, useState } from "react";
+// import { RecipeContext } from "./Context";
+// import { useEffect } from "react";
 import NavBar from "./components/navigationBar/Index";
-import axios from "axios";
+// import axios from "axios";
+import ContextProvider from "./statesStorage/ContextProvider";
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
-  const [signUp, setSignUp] = useState({
-    name: "",
-    password: "",
-    verifyPassword: "",
-  });
-  const [signUpErr, setSignUpErr] = useState({
-    name: true,
-    password: true,
-    verifyPassword: true,
-  });
-  const [login, setLogin] = useState({ name: "", password: "" });
-  const [loginErr, setLoginErr] = useState({ name: true, password: true });
-  const [users, setUsers] = useState([]);
-  const [usersFecth, setUsersFetch] = useState(true);
-  const [currentUser, setCurrentUser] = useState(null)
+  // const [isLogin, setIsLogin] = useState(false);
+  // const [signUp, setSignUp] = useState({
+  //   name: "",
+  //   password: "",
+  //   verifyPassword: "",
+  // });
+  // const [signUpErr, setSignUpErr] = useState({
+  //   name: true,
+  //   password: true,
+  //   verifyPassword: true,
+  // });
+  // const [login, setLogin] = useState({ name: "", password: "" });
+  // const [loginErr, setLoginErr] = useState({ name: true, password: true });
+  // const [users, setUsers] = useState([]);
+  // const [usersFecth, setUsersFetch] = useState(true);
+  // const [currentUser, setCurrentUser] = useState(null)
 
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:4600/users')
-        setUsers(response.data.map(user => user))
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getUsers();
-  }, [usersFecth])
+  // useEffect(() => {
+  //   const getUsers = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:4600/users");
+  //       setUsers(response.data.map((user) => user));
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getUsers();
+  // }, [usersFecth]);
 
-  const data = {
-    isLogin,
-    setIsLogin,
-    signUp,
-    setSignUp,
-    login,
-    setLogin,
-    signUpErr,
-    setSignUpErr,
-    loginErr,
-    setLoginErr,
-    users,
-    usersFecth,
-    setUsersFetch,
-    currentUser,
-    setCurrentUser
-  };
+  // const data = {
+  //   isLogin,
+  //   setIsLogin,
+  //   signUp,
+  //   setSignUp,
+  //   login,
+  //   setLogin,
+  //   signUpErr,
+  //   setSignUpErr,
+  //   loginErr,
+  //   setLoginErr,
+  //   users,
+  //   usersFecth,
+  //   setUsersFetch,
+  //   currentUser,
+  //   setCurrentUser
+  // };
   /* 1-Her sayfanın kendine ayrı css'i var
      2-useContext kullanmayı bir youtube videosu refereans alınarak yapılmıştır başlangıç kısmı src içerisndeki Context.js kısmıdır
      3-framer motion kütüphanesi indirilmiştir sebebi sayfalar arasında animasyonlu geçişlerin olması için ve elementlere çeşitle animasyonlar vermek içindir
@@ -65,10 +66,14 @@ function App() {
 
   */
   return (
-    <RecipeContext.Provider value={data}>
+    // <RecipeContext.Provider value={data}>
+    //   <NNavBaravBar />
+    //   <AnimatedRoutes />
+    // </RecipeContext.Provider>
+    <ContextProvider>
       <NavBar />
       <AnimatedRoutes />
-    </RecipeContext.Provider>
+    </ContextProvider>
   );
 }
 

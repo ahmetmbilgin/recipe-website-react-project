@@ -37,6 +37,12 @@
       "password": "kerem",
       "verifyPassword": "kerem",
       "id": 7
+    },
+    {
+      "name": "Fatih",
+      "password": "246246",
+      "verifyPassword": "246246",
+      "id": 8
     }
   ]
 }

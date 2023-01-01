@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { RecipeContext, useContext } from "../../Context";
+import React, { useState, useContext } from 'react'
+import { RecipeContext } from "../../Context";
 import Fruits from '../images/fruits.jpg'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Fruits from '../images/fruits.jpg'
 import { motion } from "framer-motion";
-import { RecipeContext, useContext } from "../../Context";
+
+import { RecipeContext } from "../../Context";
 import { Link } from "react-router-dom";
 import "./style.css"
 import axios from "axios";

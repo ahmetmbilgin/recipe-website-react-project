@@ -15,11 +15,6 @@ const NavBar = () => {
     const [userConfirm, setUserConfirm] = useState(true);
 
     useEffect(() => {
-        RestApi.getAllUsers()
-            .then(response => {
-                setUserList(response.data);
-            })
-            .catch(error => alert(error));
         GlobalStates.setUsername(localStorage.getItem("username"));
     }, [])
 
@@ -84,7 +79,14 @@ const NavBar = () => {
                                 popoverClassName="bp4-popover-content-sizing"
                                 position={Position.BOTTOM}
                             >
-                                <Button title="Login" rightIcon="user" className="bp4-icon-" intent={Intent.PRIMARY}>Login</Button>
+                                <Button title="Login" rightIcon="user" className="bp4-icon-" intent={Intent.PRIMARY}
+                                    onClick={(e) => {
+                                        RestApi.getAllUsers()
+                                            .then(response => {
+                                                setUserList(response.data);
+                                            })
+                                            .catch(error => alert(error));
+                                    }}>Login</Button>
                                 <div>
                                     <Button onClick={() => {
                                         setUser({ username: '', password: '' });

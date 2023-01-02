@@ -1,9 +1,9 @@
+import { Button } from "@blueprintjs/core";
 import { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
-import Spinner from "../spinner/Spinner";
 import RestApi from "../../RestApi";
-import { Button } from "@blueprintjs/core";
+import Spinner from "../spinner/Spinner";
 
 const stil = {
     formContainer: {
@@ -39,7 +39,6 @@ const SignupForm = () => {
     const [userList, setUserList] = useState([]);
 
     useEffect(() => {
-
         RestApi.getAllUsers()
             .then(allUsers => {
                 setUserList(allUsers.data);
@@ -117,7 +116,7 @@ const SignupForm = () => {
                 </form>
             </div>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
-                <h2>Registration in progress, hang on</h2>
+                <h2>Registration in progress...</h2>
                 <Spinner />
             </Modal>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading2} center>

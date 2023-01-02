@@ -77,42 +77,45 @@ const NavBar = () => {
                                     }}>Logout</Button>
                             </Link>
                         </div>
-                        : <Popover
-                            interactionKind={PopoverInteractionKind.CLICK}
-                            popoverClassName="bp4-popover-content-sizing"
-                            position={Position.BOTTOM}
-                        >
-                            <Button title="Login" icon="user" className="bp4-icon-" intent={Intent.PRIMARY}></Button>
-                            <div>
-                                <Button onClick={() => {
-                                    setUser({ username: '', password: '' });
-                                    setUserConfirm(true);
-                                    setUserError({ username: true, password: true });
-                                }} className="bp4-popover-dismiss popover-x-button">X</Button>
-                                <div className="bp4-input-group">
-                                    <input value={user.username}
-                                        onChange={(e) => setUser(prevState => ({ ...prevState, username: e.target.value }))}
-                                        type="text" className="bp4-input" placeholder="username..." />
-                                    {!userError.username && <div>Lütfen bu alanı doldurunuz</div>}
-                                    <Icon icon="at" size={14} />
+                        : <div>
+                            <Popover
+                                interactionKind={PopoverInteractionKind.CLICK}
+                                popoverClassName="bp4-popover-content-sizing"
+                                position={Position.BOTTOM}
+                            >
+                                <Button title="Login" rightIcon="user" className="bp4-icon-" intent={Intent.PRIMARY}>Login</Button>
+                                <div>
+                                    <Button onClick={() => {
+                                        setUser({ username: '', password: '' });
+                                        setUserConfirm(true);
+                                        setUserError({ username: true, password: true });
+                                    }} className="bp4-popover-dismiss popover-x-button">X</Button>
+                                    <div className="bp4-input-group">
+                                        <input value={user.username}
+                                            onChange={(e) => setUser(prevState => ({ ...prevState, username: e.target.value }))}
+                                            type="text" className="bp4-input" placeholder="username..." />
+                                        {!userError.username && <div>Lütfen bu alanı doldurunuz</div>}
+                                        <Icon icon="at" size={14} />
+                                    </div>
+                                    <div className="bp4-input-group">
+                                        <input value={user.password}
+                                            onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))}
+                                            type="password" className="bp4-input" placeholder="password..." />
+                                        {!userError.password && <div>Lütfen bu alanı doldurunuz</div>}
+                                        <Icon icon="lock" size={14} />
+                                    </div>
+                                    <div className="bp4-input-group">
+                                        <Link onClick={login} to={filtering(user.username, user.password) && '/'}>
+                                            <Button intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
+                                        </Link>
+                                        {!userConfirm && <div>Kullanıcı veya şifre hatalıdır !</div>}
+                                    </div>
+                                    <Link to="/" />
+                                    <Link to="*" />
                                 </div>
-                                <div className="bp4-input-group">
-                                    <input value={user.password}
-                                        onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))}
-                                        type="password" className="bp4-input" placeholder="password..." />
-                                    {!userError.password && <div>Lütfen bu alanı doldurunuz</div>}
-                                    <Icon icon="lock" size={14} />
-                                </div>
-                                <div className="bp4-input-group">
-                                    <Link onClick={login} to={filtering(user.username, user.password) && '/'}>
-                                        <Button intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
-                                    </Link>
-                                    {!userConfirm && <div>Kullanıcı veya şifre hatalıdır !</div>}
-                                </div>
-                                <Link to="/" />
-                                <Link to="*" />
-                            </div>
-                        </Popover>
+                            </Popover>
+                            <Button title="Signup" icon="add" className="bp4-icon-" intent={Intent.WARNING}>Signup</Button>
+                        </div>
                     }
                 </div>
             </div >

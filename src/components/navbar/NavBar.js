@@ -95,21 +95,21 @@ const NavBar = () => {
                                         <input value={user.username}
                                             onChange={(e) => setUser(prevState => ({ ...prevState, username: e.target.value }))}
                                             type="text" className="bp4-input" placeholder="username..." />
-                                        {!userError.username && <div>Lütfen bu alanı doldurunuz</div>}
+                                        {!userError.username && <div>Please fill the blank</div>}
                                         <Icon icon="at" size={14} />
                                     </div>
                                     <div className="bp4-input-group">
                                         <input value={user.password}
                                             onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))}
                                             type="password" className="bp4-input" placeholder="password..." />
-                                        {!userError.password && <div>Lütfen bu alanı doldurunuz</div>}
+                                        {!userError.password && <div>Please fill the blank</div>}
                                         <Icon icon="lock" size={14} />
                                     </div>
                                     <div className="bp4-input-group">
                                         <Link onClick={login} to={filtering(user.username, user.password) && '/'}>
                                             <Button intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
                                         </Link>
-                                        {!userConfirm && <div>Kullanıcı veya şifre hatalıdır !</div>}
+                                        {!userConfirm && <div>Username and Password not correct !</div>}
                                     </div>
                                     <Link to="/" />
                                     <Link to="*" />

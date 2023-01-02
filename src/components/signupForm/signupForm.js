@@ -3,6 +3,30 @@ import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import Spinner from "../spinner/Spinner";
 import RestApi from "../../RestApi";
+import { Button } from "@blueprintjs/core";
+
+const stil = {
+    formContainer: {
+        display: 'flex',
+        alignItems: 'center'
+    },
+    form: {
+        width: 300,
+        height: 450,
+        color: 'red',
+        padding: 40,
+        border: '2px solid grey',
+        backgroundColor: '#fbb360',
+        fontSize: 12,
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius: '30px'
+
+    },
+    inputContainer: {
+        height: 50
+    }
+}
 
 const SignupForm = () => {
 
@@ -49,7 +73,7 @@ const SignupForm = () => {
                         .finally(() => {
                             setLoading(false);
                             setLoading2(true);
-                            setTimeout(()=>setLoading2(false),1000);
+                            setTimeout(() => setLoading2(false), 1000);
                         });
                 } else {
                     setUsernameExis(false);
@@ -59,44 +83,45 @@ const SignupForm = () => {
     }
     return (
         <>
-            <form action="">
-                <div style={{ padding: 40, gap: 10, width: 250, display: "flex", flexDirection: "column" }} >
-                    <div style={{ width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))} value={newUser.name} placeholder="Name" type="text" />
-                        {signInError.name ? null : <div>Lütfen bu alanı doldurunuz</div>}
+            <div style={stil.formContainer} className="form-container">
+                <form style={stil.form}>
+                    <h2>Registration</h2>
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))} value={newUser.name} placeholder="Name" type="text" />
+                        {signInError.name ? null : <div>Please fill the blank</div>}
                     </div>
-                    <div style={{ width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))} value={newUser.surname} placeholder="Surname" type="text" />
-                        {signInError.surname ? null : <div>Lütfen bu alanı doldurunuz</div>}
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))} value={newUser.surname} placeholder="Surname" type="text" />
+                        {signInError.surname ? null : <div>Please fill the blank</div>}
                     </div>
-                    <div style={{ width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))} value={newUser.email} placeholder="Email" type="text" />
-                        {signInError.email ? null : <div>Lütfen bu alanı doldurunuz</div>}
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))} value={newUser.email} placeholder="Email" type="text" />
+                        {signInError.email ? null : <div>Please fill the blank</div>}
                     </div>
-                    <div style={{ width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))} value={newUser.username} placeholder="username" type="text" />
-                        {usernameExis ? null : <div>Bu kullanıcı ismi mevcut</div>}
-                        {signInError.username ? null : <div>Lütfen bu alanı doldurunuz</div>}
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))} value={newUser.username} placeholder="username" type="text" />
+                        {usernameExis ? null : <div>This username already taken !</div>}
+                        {signInError.username ? null : <div>Please fill the blank</div>}
                     </div>
-                    <div style={{ width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))} value={newUser.password} placeholder="password" type="password" />
-                        {signInError.password ? null : <div>Lütfen bu alanı doldurunuz</div>}
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))} value={newUser.password} placeholder="password" type="password" />
+                        {signInError.password ? null : <div>Please fill the blank</div>}
                     </div>
-                    <div style={{ gap: 10, width: 250, display: "flex", flexDirection: "column" }}>
-                        <input onChange={(e) => setVeriyfyPassword(e.target.value)} value={verifyPassword} placeholder="verify password" type="password" />
-                        <button onClick={(e) => {
-                            e.preventDefault();
-                            signup();
-                        }}>Kayıt Ol</button>
+                    <div style={stil.inputContainer}>
+                        <input className="bp4-input bp4-fill" onChange={(e) => setVeriyfyPassword(e.target.value)} value={verifyPassword} placeholder="verify password" type="password" />
                     </div>
-                </div>
-            </form>
+                    <Button intent="success" className="bp4-button" onClick={(e) => {
+                        e.preventDefault();
+                        signup();
+                    }}>Register</Button>
+                </form>
+            </div>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
-                <h2>Kaydınız yapılıyor, bekleyiniz</h2>
+                <h2>Registration in progress, hang on</h2>
                 <Spinner />
             </Modal>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading2} center>
-                <h2>Başarılı Kayıt</h2>
+                <h2>Successful Registration</h2>
             </Modal>
         </>
     )

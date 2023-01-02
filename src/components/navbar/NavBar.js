@@ -114,7 +114,9 @@ const NavBar = () => {
                                     <Link to="*" />
                                 </div>
                             </Popover>
-                            <Button title="Signup" icon="add" className="bp4-icon-" intent={Intent.WARNING}>Signup</Button>
+                            <Link to="/signup">
+                                <Button title="Signup" icon="add" className="bp4-icon-" intent={Intent.WARNING}>Signup</Button>
+                            </Link>
                         </div>
                     }
                 </div>

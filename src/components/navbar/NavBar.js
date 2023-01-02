@@ -54,6 +54,7 @@ const NavBar = () => {
                     <Link to="/">
                         <button className="bp4-button bp4-minimal bp4-icon-home">Home</button>
                     </Link>
+                    <span className="bp4-navbar-divider"></span>
                     <Link to="/foods">
                         <button className="bp4-button bp4-minimal">Foods</button>
                     </Link>

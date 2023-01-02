@@ -6,7 +6,6 @@ import './index.css';
 import Coffees from './pages/coffees';
 import Foods from './pages/foods';
 import HomePage from './pages/homePage';
-import Login from './pages/login/login';
 import NoPage from './pages/noPage';
 import Signup from './pages/signup/signup';
 import Snacks from './pages/snacks';
@@ -24,7 +23,6 @@ root.render(
         <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="user/:id" element={<User />} />
-            <Route exact path='login' element={<Login />} />
             <Route exact path='signup' element={<Signup />} />
             <Route exact path='foods' element={<Foods />} />
             <Route exact path='coffees' element={<Coffees />} />

@@ -11,7 +11,12 @@ import NoPage from './pages/noPage';
 import Signup from './pages/signup/signup';
 import Snacks from './pages/snacks';
 import User from './pages/user/user';
+import "@blueprintjs/icons/lib/css/blueprint-icons.css"
+import "@blueprintjs/core/lib/css/blueprint.css"
+import "normalize.css/normalize.css"
+import { FocusStyleManager } from "@blueprintjs/core";
 
+FocusStyleManager.onlyShowFocusOnTabs();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>

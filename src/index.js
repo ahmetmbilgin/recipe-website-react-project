@@ -22,7 +22,7 @@ root.render(
         <NavBar />
         <Routes>
             <Route exact path="/" element={<HomePage />} />
-            <Route exact path="user/:id" element={<User />} />
+            <Route exact path="user/:username" element={<User />} />
             <Route exact path='signup' element={<Signup />} />
             <Route exact path='foods' element={<Foods />} />
             <Route exact path='coffees' element={<Coffees />} />

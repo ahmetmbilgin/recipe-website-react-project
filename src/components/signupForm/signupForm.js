@@ -63,13 +63,11 @@ const SignupForm = () => {
                     setUsernameExis(true);
                     setLoading(true);
                     RestApi.saveUser(newUser)
-                        .then(() => {
+                        .catch(error => alert(error))
+                        .finally(() => {
                             setNewUser({ username: '', password: '', name: '', surname: '', email: '' });
                             setSignInError({ username: true, password: true, name: true, surname: true, email: true });
                             setVeriyfyPassword('');
-                        })
-                        .catch(error => alert(error))
-                        .finally(() => {
                             setLoading(false);
                             setLoading2(true);
                             setTimeout(() => setLoading2(false), 1000);

@@ -80,11 +80,9 @@ const NavBar = () => {
                                 position={Position.BOTTOM}
                             >
                                 <Button title="Login" rightIcon="user" className="bp4-icon-" intent={Intent.PRIMARY}
-                                    onClick={(e) => {
+                                    onClick={() => {
                                         RestApi.getAllUsers()
-                                            .then(response => {
-                                                setUserList(response.data);
-                                            })
+                                            .then(response => setUserList(response.data))
                                             .catch(error => alert(error));
                                     }}>Login</Button>
                                 <div>
@@ -108,8 +106,8 @@ const NavBar = () => {
                                         <Icon icon="lock" size={14} />
                                     </div>
                                     <div className="bp4-input-group">
-                                        <Link onClick={login} to={filtering(user.username, user.password) && '/'}>
-                                            <Button intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
+                                        <Link to={filtering(user.username, user.password) && '/'}>
+                                            <Button onClick={login} intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
                                         </Link>
                                         {!userConfirm && <div>Username and Password not correct !</div>}
                                     </div>

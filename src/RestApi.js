@@ -19,5 +19,9 @@ class RestApi {
         await axios.put(`${url}/users/${id}`, userObject);
     }
 
+    async saveReceipe(receipeObject, type) {
+        await axios.post(`${url}/${type}`, receipeObject);
+    }
+
 }
 export default new RestApi();

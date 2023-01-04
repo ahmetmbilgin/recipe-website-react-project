@@ -1,10 +1,11 @@
+import { Button, Label } from "@blueprintjs/core";
 import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { useParams } from "react-router-dom";
+import ReceipeCreator from "../../components/receipeForm/ReceipeCreator";
 import Spinner from "../../components/spinner/Spinner";
 import RestApi from "../../RestApi";
-import { Button, Label, Icon, Intent, Classes } from "@blueprintjs/core";
 import './style.css';
 
 const User = () => {
@@ -16,7 +17,6 @@ const User = () => {
     const [receipe, setReceipe] = useState(false);
     const [user, setUser] = useState(null);
 
-
     const loader = () => {
         setLoading(true);
         setTimeout(() => setLoading(false), 1000);
@@ -25,7 +25,7 @@ const User = () => {
     useEffect(() => {
         loader();
         RestApi.getAllUsers()
-            .then(response => setUser(...response.data.filter(obj => obj.username === username)))
+            .then(response => setUser(...response.data.filter(obj => obj.username === localStorage.getItem("username"))))
             .catch(error => alert(error));
     }, [])
 
@@ -41,39 +41,48 @@ const User = () => {
                                 setReceipe(false);
                                 setDashboard(true);
                             }}>Dashboard</Button>
-                            <Button style={{ textAlign: 'center' }} icon='duplicate' intent="success" className="bp4-icon-"
+                            <Button icon='duplicate' intent="success" className="bp4-icon-"
                                 onClick={() => {
                                     setDashboard(false);
                                     setSettings(false);
                                     setReceipe(true);
                                 }}>Create new recipe</Button>
-                            <Button style={{ marginTop: 500 }} icon='cog' intent="warning" className="bp4-icon-"
+                            <Button icon='cog' intent="warning" className="bp4-icon- settings-button"
                                 onClick={() => {
                                     setDashboard(false);
+                                    setReceipe(false);
                                     setSettings(true);
                                 }}>Settings</Button>
                         </div>
                         <div className="content">
                             {dashboard ? <div>Dashboard</div> : null}
-                            {receipe ? <input></input> : null}
+                            {receipe ? <ReceipeCreator id={user.id} /> : null}
                             {settings ? <div>
                                 <Label>
                                     E-mail
-                                    <input onChange={e => setUser(prevState => ({ ...prevState, email: e.target.value }))} className={Classes.INPUT} placeholder={user.email} />
+                                    <input
+                                        onChange={e => setUser(prevState => ({ ...prevState, email: e.target.value }))}
+                                        className="bp4-input bp4-fill" placeholder={user.email} />
                                 </Label>
                                 <Label>
                                     Password
-                                    <input onChange={e => setUser(prevState => ({ ...prevState, password: e.target.value }))} className={Classes.INPUT} placeholder={user.password} />
+                                    <input
+                                        onChange={e => setUser(prevState => ({ ...prevState, password: e.target.value }))}
+                                        className="bp4-input bp4-fill" placeholder={user.password} />
                                 </Label>
                                 <Label>
                                     Name
-                                    <input onChange={e => setUser(prevState => ({ ...prevState, name: e.target.value }))} className={Classes.INPUT} placeholder={user.name} />
+                                    <input
+                                        onChange={e => setUser(prevState => ({ ...prevState, name: e.target.value }))}
+                                        className="bp4-input bp4-fill" placeholder={user.name} />
                                 </Label>
                                 <Label>
                                     Surname
-                                    <input onChange={e => setUser(prevState => ({ ...prevState, surname: e.target.value }))} className={Classes.INPUT} placeholder={user.surname} />
+                                    <input
+                                        onChange={e => setUser(prevState => ({ ...prevState, surname: e.target.value }))}
+                                        className="bp4-input bp4-fill" placeholder={user.surname} />
                                 </Label>
-                                <Button onClick={() => {
+                                <Button intent="danger" onClick={() => {
                                     loader();
                                     RestApi.changeUser(user, user.id);
                                 }}>Save</Button>
@@ -81,10 +90,10 @@ const User = () => {
                         </div>
                     </div>
                     <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
-                        <h2>Veriler yükleniyor</h2>
+                        <h2>Data is loading...</h2>
                         <Spinner />
                     </Modal>
-                </> : <h1>Buna yetkiniz bulunmamaktadır !</h1>}
+                </> : <h1>You are not authorized !</h1>}
         </>
     )
 }

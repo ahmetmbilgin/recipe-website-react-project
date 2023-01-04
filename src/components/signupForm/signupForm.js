@@ -118,7 +118,7 @@ const SignupForm = () => {
                 <Spinner />
             </Modal>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading2} center>
-                <h2>Successful Registration</h2>
+                <h2>Successful registration</h2>
             </Modal>
         </>
     )

@@ -13,7 +13,7 @@
     align-items: center;
     gap: 15px;
     border-right: 2px solid rgb(17 20 24 / 10%);
-
+    text-align: center;
 }
 
 .side-menu>.heading {
@@ -24,6 +24,10 @@
 
 .side-menu>button {
     width: 150px;
+    text-align: center;
+}
+.side-menu .settings-button{
+    margin-top: 500px;
 }
 
 .account-page .content {

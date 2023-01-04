@@ -1,0 +1,53 @@
+.receipe-form-container {
+    margin: 50px;
+    width: 900px;
+    height: 650px;
+    font-weight: 700;
+}
+
+.receipe-form-container .input-container {
+    height: 76px;
+}
+
+.receipe-form-container .description-container {
+    height: 270px;
+}
+
+.receipe-form-container form {
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.receipe-form-container .checkbox-container {
+    padding: 0 20px;
+    margin: -25px 0 10px 0;
+    gap: 20px;
+    width: 290px;
+    height: 36px;
+    display: flex;
+    color: black !important;
+}
+
+
+.title-box{
+    width: 400px;
+}
+
+.checkbox-container label {
+    width: 40px;
+}
+
+.save-button {
+    width: 180px;
+    align-self: center;
+}
+
+.error-message {
+    line-height: 16px;
+    font-size: 12px;
+    text-shadow: 0.5px 0.5px 0.1px black;
+    color: red;
+    font-weight: normal !important;
+}

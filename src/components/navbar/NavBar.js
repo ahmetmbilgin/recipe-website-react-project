@@ -1,18 +1,24 @@
-import { Button, Icon, Intent, Popover, PopoverInteractionKind, Position } from "@blueprintjs/core";
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
+import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import Spinner from "../spinner/Spinner";
 import GlobalStates from "../../GlobalStates";
 import RestApi from "../../RestApi";
 import './style.css';
 
-const NavBar = () => {
-
+const NavBar2 = () => {
     const [userList, setUserList] = useState([]);
     const [user, setUser] = useState({ username: '', password: '' });
     const [userError, setUserError] = useState({ username: true, password: true });
     const [userConfirm, setUserConfirm] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+    const loader = () => {
+        setLoading(true);
+        setTimeout(() => setLoading(false), 1000);
+    }
 
     useEffect(() => {
         GlobalStates.setUsername(localStorage.getItem("username"));
@@ -25,6 +31,7 @@ const NavBar = () => {
             setUserConfirm(false);
             GlobalStates.setUsername(username);
             localStorage.setItem("username", username);
+            loader();
             return true;
         } else {
             return false;
@@ -39,90 +46,85 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="bp4-navbar bp4-dark">
-            <div>
-                <div className="bp4-navbar-group bp4-align-left">
-                    <Icon icon="shop" size={36} color="#cd8808" />
-                    <div className="bp4-navbar-heading">Acıktım</div>
-                </div>
-                <div className="bp4-navbar-group bp4-align-right">
-                    <Link to="/">
-                        <button className="bp4-button bp4-minimal bp4-icon-home">Home</button>
-                    </Link>
-                    <span className="bp4-navbar-divider"></span>
-                    <Link to="/foods">
-                        <button className="bp4-button bp4-minimal">Foods</button>
-                    </Link>
-                    <Link to="/coffees">
-                        <button className="bp4-button bp4-minimal">Coffees</button>
-                    </Link>
-                    <Link to="/snacks">
-                        <button className="bp4-button bp4-minimal">Snacks</button>
-                    </Link>
-                    <span className="bp4-navbar-divider"></span>
-                    {GlobalStates.username ?
-                        <div>
-                            <Link to={`/user/${localStorage.getItem("username")}`}>
-                                <Button intent="success" rightIcon="user" className="bp4-icon-" title="My Account"> {localStorage.getItem("username")}</Button>
-                            </Link>
-                            <Link to="/">
-                                <Button title="Logout" icon="log-out" intent="danger" className="bp4-popover-dismiss"
-                                    onClick={(e) => {
+        <>
+            <nav className='navbar'>
+                <div>
+                    <div className='icon-mark'>
+                        Food<span>Receipe</span>.com
+                    </div>
+                    <div className='button-group'>
+                        <ul>
+                            <li><Link to='/'>Home</Link></li>
+                            <span className='divider'></span>
+                            <li><Link to="/foods">Foods</Link></li>
+                            <li><Link to='coffees'>Coffees</Link></li>
+                            <li><Link to='snacks'>Snacks</Link></li>
+                            <span className='divider'></span>
+                            {GlobalStates.username
+                                ? <>
+                                    <li className='success' title="My Account">
+                                        <Link to={`/user/${localStorage.getItem("username")}`}>
+                                            {localStorage.getItem("username")}
+                                        </Link>
+                                    </li>
+                                    <li className='danger' title="Logout" onClick={(e) => {
                                         GlobalStates.setUsername('');
                                         localStorage.clear();
-                                    }}>Logout</Button>
-                            </Link>
-                        </div>
-                        : <div>
-                            <Popover
-                                interactionKind={PopoverInteractionKind.CLICK}
-                                popoverClassName="bp4-popover-content-sizing"
-                                position={Position.BOTTOM}
-                            >
-                                <Button title="Login" rightIcon="user" className="bp4-icon-" intent={Intent.PRIMARY}
-                                    onClick={() => {
+                                    }}>
+                                        <Link to="/">
+                                            Logout
+                                        </Link>
+                                    </li>
+                                </>
+                                : <>
+                                    <li className='primary login popover' title="Login" onClick={() => {
                                         RestApi.getAllUsers()
                                             .then(response => setUserList(response.data))
                                             .catch(error => alert(error));
-                                    }}>Login</Button>
-                                <div>
-                                    <Button onClick={() => {
-                                        setUser({ username: '', password: '' });
-                                        setUserConfirm(true);
-                                        setUserError({ username: true, password: true });
-                                    }} className="bp4-popover-dismiss popover-x-button">X</Button>
-                                    <div className="bp4-input-group">
-                                        <input value={user.username}
-                                            onChange={(e) => setUser(prevState => ({ ...prevState, username: e.target.value }))}
-                                            type="text" className="bp4-input" placeholder="username..." />
-                                        {!userError.username && <div>Please fill the blank</div>}
-                                        <Icon icon="at" size={14} />
-                                    </div>
-                                    <div className="bp4-input-group">
-                                        <input value={user.password}
-                                            onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))}
-                                            type="password" className="bp4-input" placeholder="password..." />
-                                        {!userError.password && <div>Please fill the blank</div>}
-                                        <Icon icon="lock" size={14} />
-                                    </div>
-                                    <div className="bp4-input-group">
-                                        <Link to={filtering(user.username, user.password) && '/'}>
-                                            <Button onClick={login} intent="success" className={filtering(user.username, user.password) && "bp4-popover-dismiss"}>Enter</Button>
+                                    }}>
+                                        <Link >
+                                            Login
                                         </Link>
-                                        {!userConfirm && <div>Username and Password not correct !</div>}
-                                    </div>
-                                    <Link to="/" />
-                                    <Link to="*" />
-                                </div>
-                            </Popover>
-                            <Link to="/signup">
-                                <Button title="Signup" icon="add" className="bp4-icon-" intent={Intent.WARNING}>Signup</Button>
-                            </Link>
-                        </div>
-                    }
+                                        {/* Popover */}
+                                        <form className="popover__content">
+                                            <div className='input-container'>
+                                                <input value={user.username} className='input' type="text" placeholder='username'
+                                                    onChange={(e) => setUser(prevState => ({ ...prevState, username: e.target.value }))} />
+                                                {!userError.username && <div>Please fill the blank</div>}
+                                            </div>
+                                            <div className='input-container'>
+                                                <input value={user.password} className='input' type="password" placeholder='password'
+                                                    onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))} />
+                                                {!userError.password && <div>Please fill the blank</div>}
+                                            </div>
+                                            <Link to={filtering(user.username, user.password) && '/'}>
+                                                <button className='success enter-button' onClick={(e) => {
+                                                    RestApi.getAllUsers()
+                                                        .then(response => setUserList(response.data))
+                                                        .catch(error => alert(error));
+                                                    login();
+
+                                                }}>Enter</button>
+                                            </Link>
+                                            {!userConfirm && <div>Wrong username or password!</div>}
+                                        </form>
+                                    </li>
+                                    <li className='warning' title="Signup">
+                                        <Link to="/signup">
+                                            Signup
+                                        </Link>
+                                    </li>
+                                </>}
+                        </ul>
+                    </div>
                 </div>
-            </div >
-        </nav >
+            </nav>
+            <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
+                <h2>Welcome, wait a second</h2>
+                <Spinner />
+            </Modal>
+        </>
     )
 }
-export default observer(NavBar);
+
+export default observer(NavBar2);

@@ -1,35 +1,205 @@
-nav {
+.navbar {
+    width: 100vw;
+    height: 66px;
+    background-color: #5b3c55ce;
+    padding: 5px 20px;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+
+.navbar>div {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    color: #fff;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.navbar .icon-mark {
+    width: 250px;
     display: flex;
     align-items: center;
-    font-weight: 800;
-    padding: 30px 50px !important;
-}
-
-nav>div {
-    margin: 0 auto;
-    width: 100%;
-}
-
-nav .bp4-navbar-heading {
-    font-size: 36px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
     color: #e7fcf0;
 }
 
-nav .bp4-align-right a,
-.bp4-popover-content a {
-    text-decoration: none !important;
+.navbar .icon-mark span {
+    color: #2a17d2d9;
 }
 
-.popover-x-button {
-    color: red !important;
-    margin-left: 170px !important;
+.navbar .button-group {
+    width: 550px;
+    font-weight: 400;
+    height: 100%;
 }
 
-.bp4-input-group {
-    margin: 10px 0;
+.button-group>ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.bp4-input-group div {
-    color: red;
-    text-shadow: 1px 1px 0.3px black;
+.button-group li {
+    line-height: 1.15;
+    border-radius: 2px;
+}
+
+.button-group li:hover {
+    background-color: rgba(220, 222, 224, 0.2);
+}
+
+.button-group>ul>li>a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 7px 0;
+    width: 80px;
+}
+
+.divider {
+    border-left-color: rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(246, 245, 245, 0.564);
+    height: 20px;
+    margin: 0 10px;
+}
+
+/*  popover   */
+.popover {
+    position: relative;
+    display: inline-block;
+}
+
+.popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    left: -85px;
+    transform: translate(0, 10px);
+    background-color: #5b3c55ce;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    border-radius: 10px;
+    width: 260px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #bfbfbf transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.popover:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+/*  login popover box  */
+.popover__content .input-container {
+    height: 52px;
+}
+
+.popover__content .enter-button {
+    color: #f6f7f9;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 30px;
+}
+
+/* primary button  */
+.primary {
+    background-color: #2d72d2;
+
+}
+
+.primary:hover {
+    background-color: #215db0 !important;
+}
+
+/* warning button  */
+.warning {
+    background-color: #fbb360;
+}
+
+.warning:hover {
+    background-color: #f9ad56cc !important;
+}
+
+.warning:active {
+    background-color: rgba(241, 140, 24, 0.732) !important;
+}
+
+/* success button */
+
+.success {
+    background-color: #238551;
+}
+
+.success:hover {
+    background-color: #157040dd !important;
+}
+
+.success:active {
+    background-color: #195f39d9 !important;
+}
+
+/* danger button */
+
+.danger {
+    background-color: #cd4246;
+}
+
+.danger:hover {
+    background-color: #ab3437e4 !important;
+}
+
+.danger:active {
+    background-color: #872e31da !important;
+}
+
+/* input */
+
+.input {
+    background: rgba(17, 20, 24, 0.3);
+    box-shadow: 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), inset 0 0 0 1px rgb(255 255 255 / 20%), inset 0 -1px 1px 0 #8f99a8;
+    color: #f6f7f9;
+    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    padding: 0 10px;
+    transition: box-shadow 100ms cubic-bezier(0.4, 1, 0.75, 0.9);
+    vertical-align: middle;
 }

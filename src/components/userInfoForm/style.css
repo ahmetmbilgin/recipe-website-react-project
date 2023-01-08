@@ -1,0 +1,81 @@
+.delete-btn>a {
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+.delete-btn>a:hover {
+    text-decoration: none;
+}
+
+.delete-btn,
+.cancel-btn {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    width: 135px;
+    height: 42px;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+
+.user-info-container input {
+    margin-bottom: 15px;
+    width: 250px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.user-info-container input:focus {
+    border-color: #005499;
+}
+
+.user-info-container button {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.user-info-container .delete-account-btn {
+    background-color: #FF006A;
+    background-image: linear-gradient(0deg, #cc0055, #ff3388);
+    color: #E6EAEF;
+    border-color: #cc0055;
+    text-shadow: 0 1px 1px #990040;
+}
+
+.user-info-container .delete-account-btn:hover {
+    background-image: none;
+    background-color: #e30461d0;
+}
+
+.user-info-container .delete-account-btn:active {
+    background-color: #b90450cf;
+}
+
+.user-info-container .save-btn {
+    background-color: #52C11F;
+    background-image: linear-gradient(0deg, #3f9518, #6ade35);
+    color: #E6EAEF;
+    border-color: #3f9518;
+    text-shadow: 0 1px 1px #2d6911;
+}
+
+.user-info-container .save-btn:hover {
+    background-image: none;
+    background-color: #45a21ae3;
+}
+
+.user-info-container .save-btn:active {
+    background-color: #398616d1;
+}

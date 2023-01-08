@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { Link } from 'react-router-dom';
-import Spinner from "../spinner/Spinner";
-import GlobalStates from "../../GlobalStates";
 import RestApi from "../../RestApi";
+import Spinner from "../spinner/Spinner";
 import './style.css';
 
 const NavBar2 = () => {
@@ -14,6 +13,7 @@ const NavBar2 = () => {
     const [userError, setUserError] = useState({ username: true, password: true });
     const [userConfirm, setUserConfirm] = useState(true);
     const [loading, setLoading] = useState(false);
+    const [correctUser, setCorrectUser] = useState('');
 
     const loader = () => {
         setLoading(true);
@@ -21,15 +21,15 @@ const NavBar2 = () => {
     }
 
     useEffect(() => {
-        GlobalStates.setUsername(localStorage.getItem("username"));
+        setCorrectUser(localStorage.getItem("username"));
     }, [])
 
     const filtering = (username, password) => userList.filter(user => user.username === username && user.password === password).length > 0;
     const userSearch = (username, password) => {
         if (filtering(username, password)) {
+            setCorrectUser(user.username)
             setUser({ username: '', password: '' });
             setUserConfirm(false);
-            GlobalStates.setUsername(username);
             localStorage.setItem("username", username);
             loader();
             return true;
@@ -60,7 +60,7 @@ const NavBar2 = () => {
                             <li><Link to='coffees'>Coffees</Link></li>
                             <li><Link to='snacks'>Snacks</Link></li>
                             <span className='divider'></span>
-                            {GlobalStates.username
+                            {correctUser
                                 ? <>
                                     <li className='success' title="My Account">
                                         <Link to={`/user/${localStorage.getItem("username")}`}>
@@ -68,7 +68,7 @@ const NavBar2 = () => {
                                         </Link>
                                     </li>
                                     <li className='danger' title="Logout" onClick={(e) => {
-                                        GlobalStates.setUsername('');
+                                        setCorrectUser('');
                                         localStorage.clear();
                                     }}>
                                         <Link to="/">

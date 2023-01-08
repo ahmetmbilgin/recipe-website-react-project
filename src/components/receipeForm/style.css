@@ -3,7 +3,21 @@
     width: 900px;
     height: 650px;
     font-weight: 700;
+    border: 1px solid black;
+    box-shadow: 0 0 0 1px rgb(17 20 24 / 10%), 0 4px 8px rgb(17 20 24 / 20%), 0 18px 46px 6px rgb(17 20 24 / 20%);
 }
+
+.receipe-form-container input {
+    margin-bottom: 15px;
+    width: 250px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.receipe-form-container input:focus {
+    border-color: #005499;
+}
+
 
 .receipe-form-container .input-container {
     height: 76px;
@@ -31,7 +45,7 @@
 }
 
 
-.title-box{
+.title-box {
     width: 400px;
 }
 

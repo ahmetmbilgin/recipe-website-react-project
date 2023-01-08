@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "json-server -p 4600 --delay 1000 --watch assets/data/db.json"
+    "api": "json-server -p 4600 --delay 10 --watch assets/data/db.json"
   },
   "eslintConfig": {
     "extends": [

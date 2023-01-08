@@ -11,25 +11,125 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     border-right: 2px solid rgb(17 20 24 / 10%);
     text-align: center;
 }
 
-.side-menu>.heading {
-    font-size: 24px;
+.side-menu>.username {
+    font-size: 34px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .side-menu>button {
     width: 150px;
-    text-align: center;
+    height: 34px;
+    border: none;
+    border-radius: 2px;
+    background-color: #991BE2;
+    background-image: linear-gradient(0deg, #7a16b4, #ae47e9);
+    color: #E6EAEF;
+    border-color: #7a16b4;
+    text-shadow: 0 1px 1px #5b1087;
 }
-.side-menu .settings-button{
+
+.side-menu>button:hover {
+    background-color: #7211aaf9;
+    background-image: none;
+}
+
+.side-menu>button:active {
+    background-color: #7211aacf;
+    background-image: none;
+}
+
+.side-menu .settings-button {
     margin-top: 500px;
 }
 
 .account-page .content {
     padding: 20px;
+}
+
+.delete-btn>a {
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+.delete-btn>a:hover {
+    text-decoration: none;
+}
+
+.delete-btn,
+.cancel-btn {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    width: 135px;
+    height: 42px;
+}
+
+.content .user-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+
+.user-info-container input {
+    margin-bottom: 15px;
+    width: 250px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.user-info-container input:focus {
+    border-color: #005499;
+}
+
+.user-info-container button {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.user-info-container .delete-account-btn {
+    background-color: #FF006A;
+    background-image: linear-gradient(0deg, #cc0055, #ff3388);
+    color: #E6EAEF;
+    border-color: #cc0055;
+    text-shadow: 0 1px 1px #990040;
+}
+
+.user-info-container .delete-account-btn:hover {
+    background-image: none;
+    background-color: #e30461d0;
+}
+
+.user-info-container .delete-account-btn:active {
+    background-color: #b90450cf;
+}
+
+.user-info-container .save-btn {
+    background-color: #52C11F;
+    background-image: linear-gradient(0deg, #3f9518, #6ade35);
+    color: #E6EAEF;
+    border-color: #3f9518;
+    text-shadow: 0 1px 1px #2d6911;
+}
+
+.user-info-container .save-btn:hover {
+    background-image: none;
+    background-color: #45a21ae3;
+}
+
+.user-info-container .save-btn:active {
+    background-color: #398616d1;
 }

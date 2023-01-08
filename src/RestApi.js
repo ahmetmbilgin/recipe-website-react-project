@@ -3,8 +3,9 @@ import axios from "axios";
 const url = 'http://localhost:4600';
 
 class RestApi {
-    async getUser(username) {
-        await axios.get(`${url}/users/${username}`);
+
+    async getUser(id) {
+        return await axios.get(`${url}/users/${id}`);
     }
 
     async getAllUsers() {

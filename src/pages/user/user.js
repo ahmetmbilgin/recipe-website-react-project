@@ -1,10 +1,11 @@
-import { Button, Label } from "@blueprintjs/core";
+import { Link } from "@blueprintjs/icons/lib/esm/generated/20px/paths";
 import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { useParams } from "react-router-dom";
 import ReceipeCreator from "../../components/receipeForm/ReceipeCreator";
 import Spinner from "../../components/spinner/Spinner";
+import GlobalStates from "../../GlobalStates";
 import RestApi from "../../RestApi";
 import './style.css';
 
@@ -12,10 +13,13 @@ const User = () => {
 
     const { username } = useParams();
     const [loading, setLoading] = useState(false);
+    const [deletingModal, setDeletingModal] = useState(false);
     const [settings, setSettings] = useState(false);
-    const [dashboard, setDashboard] = useState(false);
-    const [receipe, setReceipe] = useState(false);
+    const [dashboard, setDashboard] = useState(true);
+    const [createReceipe, setCreateReceipe] = useState(false);
     const [user, setUser] = useState(null);
+    const [copyUser, setCopyUser] = useState(null);
+
 
     const loader = () => {
         setLoading(true);
@@ -35,63 +39,78 @@ const User = () => {
                 ? <>
                     <div className="account-page">
                         <div className="side-menu">
-                            <div className="heading">{username}</div>
-                            <Button icon='control' onClick={() => {
+                            <div className="username">{username}</div>
+                            <button onClick={() => {
                                 setSettings(false);
-                                setReceipe(false);
+                                setCreateReceipe(false);
                                 setDashboard(true);
-                            }}>Dashboard</Button>
-                            <Button icon='duplicate' intent="success" className="bp4-icon-"
-                                onClick={() => {
-                                    setDashboard(false);
-                                    setSettings(false);
-                                    setReceipe(true);
-                                }}>Create new recipe</Button>
-                            <Button icon='cog' intent="warning" className="bp4-icon- settings-button"
-                                onClick={() => {
-                                    setDashboard(false);
-                                    setReceipe(false);
-                                    setSettings(true);
-                                }}>Settings</Button>
+                            }}>Dashboard</button>
+                            <button onClick={() => {
+                                setDashboard(false);
+                                setSettings(false);
+                                setCreateReceipe(true);
+                            }}>Create new recipe</button>
+                            <button onClick={() => {
+                                RestApi.getUser(user.id)
+                                    .then(response => setUser(response.data))
+                                    .catch(error => alert(error));
+                                setDashboard(false);
+                                setCreateReceipe(false);
+                                setSettings(true);
+                            }}>Settings</button>
                         </div>
                         <div className="content">
                             {dashboard ? <div>Dashboard</div> : null}
-                            {receipe ? <ReceipeCreator id={user.id} /> : null}
-                            {settings ? <div>
-                                <Label>
+                            {createReceipe ? <ReceipeCreator id={user.id} /> : null}
+                            {settings ? <div className="user-info-container">
+                                <label>
                                     E-mail
-                                    <input
-                                        onChange={e => setUser(prevState => ({ ...prevState, email: e.target.value }))}
-                                        className="bp4-input bp4-fill" placeholder={user.email} />
-                                </Label>
-                                <Label>
+                                </label>
+                                <input
+                                    onChange={e => setCopyUser(prevState => ({ ...prevState, email: e.target.value }))}
+                                    placeholder={user.email} />
+                                <label>
                                     Password
-                                    <input
-                                        onChange={e => setUser(prevState => ({ ...prevState, password: e.target.value }))}
-                                        className="bp4-input bp4-fill" placeholder={user.password} />
-                                </Label>
-                                <Label>
+                                </label>
+                                <input
+                                    onChange={e => setCopyUser(prevState => ({ ...prevState, password: e.target.value }))}
+                                    placeholder={user.password} />
+                                <label>
                                     Name
-                                    <input
-                                        onChange={e => setUser(prevState => ({ ...prevState, name: e.target.value }))}
-                                        className="bp4-input bp4-fill" placeholder={user.name} />
-                                </Label>
-                                <Label>
+                                </label>
+                                <input
+                                    onChange={e => setCopyUser(prevState => ({ ...prevState, name: e.target.value }))}
+                                    placeholder={user.name} />
+                                <label>
                                     Surname
-                                    <input
-                                        onChange={e => setUser(prevState => ({ ...prevState, surname: e.target.value }))}
-                                        className="bp4-input bp4-fill" placeholder={user.surname} />
-                                </Label>
-                                <Button intent="danger" onClick={() => {
-                                    loader();
-                                    RestApi.changeUser(user, user.id);
-                                }}>Save</Button>
+                                </label>
+                                <input
+                                    onChange={e => setCopyUser(prevState => ({ ...prevState, surname: e.target.value }))}
+                                    placeholder={user.surname} />
+                                <button className="save-btn" onClick={() => {
+                                    if (Object.values(copyUser)) {
+                                        loader();
+                                        RestApi.changeUser({ ...user, ...copyUser }, user.id);
+                                        setCopyUser(null);
+                                    }
+                                }}>Save</button>
+                                <button className="delete-account-btn" onClick={(e) => setDeletingModal(true)}>Delete Account</button>
                             </div> : null}
                         </div>
                     </div>
                     <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
                         <h2>Data is loading...</h2>
                         <Spinner />
+                    </Modal>
+                    <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={deletingModal} center>
+                        <h2>Do you want to delete your account ?</h2>
+                        <button className="delete-btn" onClick={() => {
+                            RestApi.changeUser({}, user.id);
+                            localStorage.clear();
+                        }}>
+                            <a href="/">Delete</a>
+                        </button>
+                        <button className="cancel-btn" onClick={() => setDeletingModal(false)}>Cancel</button>
                     </Modal>
                 </> : <h1>You are not authorized !</h1>}
         </>

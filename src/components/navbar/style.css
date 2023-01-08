@@ -6,16 +6,15 @@
     z-index: 10;
     position: sticky;
     top: 0;
+    box-sizing: border-box;
 }
 
 .navbar>div {
-    width: 100%;
     display: flex;
     text-align: center;
     justify-content: space-between;
     color: #fff;
     height: 100%;
-    flex-wrap: wrap;
 }
 
 .navbar .icon-mark {

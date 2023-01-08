@@ -1,11 +1,9 @@
-import { Link } from "@blueprintjs/icons/lib/esm/generated/20px/paths";
 import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { useParams } from "react-router-dom";
 import ReceipeCreator from "../../components/receipeForm/ReceipeCreator";
 import Spinner from "../../components/spinner/Spinner";
-import GlobalStates from "../../GlobalStates";
 import RestApi from "../../RestApi";
 import './style.css';
 

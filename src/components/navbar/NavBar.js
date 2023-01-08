@@ -1,4 +1,3 @@
-import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
@@ -127,4 +126,4 @@ const NavBar2 = () => {
     )
 }
 
-export default observer(NavBar2);
+export default NavBar2;

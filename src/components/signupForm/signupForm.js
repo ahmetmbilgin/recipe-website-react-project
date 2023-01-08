@@ -1,4 +1,3 @@
-import { Button } from "@blueprintjs/core";
 import { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
@@ -84,33 +83,33 @@ const SignupForm = () => {
                 <form style={stil.form}>
                     <h2>Registration</h2>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))} value={newUser.name} placeholder="Name" type="text" />
+                        <input className="" onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))} value={newUser.name} placeholder="Name" type="text" />
                         {signInError.name ? null : <div>Please fill the blank</div>}
                     </div>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))} value={newUser.surname} placeholder="Surname" type="text" />
+                        <input className="" onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))} value={newUser.surname} placeholder="Surname" type="text" />
                         {signInError.surname ? null : <div>Please fill the blank</div>}
                     </div>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))} value={newUser.email} placeholder="Email" type="text" />
+                        <input className="" onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))} value={newUser.email} placeholder="Email" type="text" />
                         {signInError.email ? null : <div>Please fill the blank</div>}
                     </div>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))} value={newUser.username} placeholder="username" type="text" />
+                        <input className="" onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))} value={newUser.username} placeholder="username" type="text" />
                         {usernameExis ? null : <div>This username already taken !</div>}
                         {signInError.username ? null : <div>Please fill the blank</div>}
                     </div>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))} value={newUser.password} placeholder="password" type="password" />
+                        <input className="" onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))} value={newUser.password} placeholder="password" type="password" />
                         {signInError.password ? null : <div>Please fill the blank</div>}
                     </div>
                     <div style={stil.inputContainer}>
-                        <input className="bp4-input bp4-fill" onChange={(e) => setVeriyfyPassword(e.target.value)} value={verifyPassword} placeholder="verify password" type="password" />
+                        <input className="" onChange={(e) => setVeriyfyPassword(e.target.value)} value={verifyPassword} placeholder="verify password" type="password" />
                     </div>
-                    <Button intent="success" className="bp4-button" onClick={(e) => {
+                    <button className="" onClick={(e) => {
                         e.preventDefault();
                         signup();
-                    }}>Register</Button>
+                    }}>Register</button>
                 </form>
             </div>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>

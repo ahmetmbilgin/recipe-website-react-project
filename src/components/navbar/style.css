@@ -87,15 +87,15 @@
     visibility: hidden;
     position: absolute;
     top: 50px;
-    left: -85px;
+    left: -115px;
     transform: translate(0, 10px);
     background-color: #5b3c55ce;
     padding: 1.5rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     width: auto;
     border-radius: 10px;
-    width: 260px;
-    height: 200px;
+    width: 220px;
+    height: 150px;
     display: flex;
     flex-direction: column;
 }
@@ -191,7 +191,7 @@
     box-shadow: 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), inset 0 0 0 1px rgb(255 255 255 / 20%), inset 0 -1px 1px 0 #8f99a8;
     color: #f6f7f9;
     position: relative;
-    width: 100%;
+    width: 200px;
     border: none;
     border-radius: 2px;
     font-size: 14px;

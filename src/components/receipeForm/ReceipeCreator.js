@@ -32,15 +32,12 @@ const ReceipeCreator = ({ id }) => {
     return (
         <div className='receipe-form-container'>
             <form>
-                <label>
+                <label className='input-container'>
                     Title:
-                </label>
-                <div className='input-container'>
                     <input onChange={(e) => setReceipe(prevState => ({ ...prevState, title: e.target.value }))}
                         value={receipe.title} className="title-box" />
                     {error.title ? null : <div className='error-message'>Please enter a title</div>}
-                </div>
-
+                </label>
                 <label className='food-type-box'>
                     Food Type:
                 </label>
@@ -48,25 +45,29 @@ const ReceipeCreator = ({ id }) => {
                     <label>
                         <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'foods' }))}
                             name="type-of-food" type="radio" />
-                        Food</label>
+                        Food
+                    </label>
                     <label>
                         <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'coffees' }))}
                             name="type-of-food" type="radio" />
-                        Coffee</label>
+                        Coffee
+                    </label>
                     <label>
                         <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'snacks' }))}
                             name="type-of-food" type="radio" />
-                        Snack</label>
+                        Snack
+                    </label>
                     {error.type ? null : <div className='error-message'>Choose type</div>}
                 </div>
-                <div className='description-container' >
-                    <input onChange={(e) => setReceipe(prevState => ({ ...prevState, description: e.target.value }))}
-                        value={receipe.description} placeholder='Description: maximum 1000 character...' />
+                <label className='description-container'>
+                    Description:
+                    <textarea onChange={(e) => setReceipe(prevState => ({ ...prevState, description: e.target.value }))}
+                        value={receipe.description} />
                     {error.description ? null : <div className='error-message'>Description can not be empyt </div>}
-                </div>
+                </label>
                 <label className='input-container'>
                     Picture url:
-                    <input value={receipe.url} onChange={(e) => setReceipe(prevState => ({ ...prevState, url: e.target.value }))} />
+                    <input className='input-url' value={receipe.url} onChange={(e) => setReceipe(prevState => ({ ...prevState, url: e.target.value }))} />
                     {error.url ? null : <div className='error-message'>Enter an url</div>}
                 </label>
                 <button onClick={saveReceipe} className='save-button'>Save</button>

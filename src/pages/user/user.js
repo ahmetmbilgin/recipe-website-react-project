@@ -13,9 +13,41 @@ const User = () => {
     const { username } = useParams();
     const [loading, setLoading] = useState(false);
     const [settings, setSettings] = useState(false);
-    const [dashboard, setDashboard] = useState(true);
+    const [dashboard, setDashboard] = useState(false);
     const [createReceipe, setCreateReceipe] = useState(false);
     const [user, setUser] = useState(null);
+    const [receipeList, setReceipeList] = useState([]);
+
+    const getUserReceipes = () => {
+        setReceipeList([]);
+        RestApi.getReceipe('foods')
+            .then(response => {
+                response.data.forEach(object => {
+                    if (object.userID === user.id) {
+                        setReceipeList(prevState => [...prevState, object])
+                    }
+                })
+            })
+            .catch(error => alert(error));
+        RestApi.getReceipe('coffees')
+            .then(response => {
+                response.data.forEach(object => {
+                    if (object.userID === user.id) {
+                        setReceipeList(prevState => [...prevState, object])
+                    }
+                })
+            })
+            .catch(error => alert(error));
+        RestApi.getReceipe('snacks')
+            .then(response => {
+                response.data.forEach(object => {
+                    if (object.userID === user.id) {
+                        setReceipeList(prevState => [...prevState, object])
+                    }
+                })
+            })
+            .catch(error => alert(error));
+    }
 
     useEffect(() => {
         setLoading(true);
@@ -33,6 +65,8 @@ const User = () => {
                     <div className="side-menu">
                         <div className="username">{username}</div>
                         <button onClick={() => {
+                            getUserReceipes();
+                            console.log(receipeList);
                             setSettings(false);
                             setCreateReceipe(false);
                             setDashboard(true);
@@ -52,7 +86,7 @@ const User = () => {
                         }}>Settings</button>
                     </div>
                     <div className="content">
-                        {dashboard ? <div>Dashboard</div> : null}
+                        {dashboard ? receipeList.map((obj, index) => <div key={index}>{obj.title}</div>) : null}
                         {createReceipe ? <ReceipeCreator id={user.id} /> : null}
                         {settings ? <UserInfoForm user={user} /> : null}
                     </div>

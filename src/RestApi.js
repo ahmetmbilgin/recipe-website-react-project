@@ -8,6 +8,10 @@ class RestApi {
         return await axios.get(`${url}/users/${id}`);
     }
 
+    async getReceipe(foodType) {
+        return await axios.get(`${url}/${foodType}`);
+    }
+
     async getAllUsers() {
         return await axios.get(`${url}/users`);
     }

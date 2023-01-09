@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { Modal } from 'react-responsive-modal';
 import Spinner from "../../components/spinner/Spinner";
 import RestApi from '../../RestApi';
-import './style.css';
+
+const stil = {
+    span: {
+        color: 'red'
+    }
+}
 
 const EditableReceipeForm = ({ receipeObj }) => {
     const [receipe, setReceipe] = useState({ title: receipeObj.title, description: receipeObj.description, type: receipeObj.type, url: receipeObj.url, userID: receipeObj.userID });
@@ -57,7 +62,7 @@ const EditableReceipeForm = ({ receipeObj }) => {
                             }} className="delete-button btn">Delete Receipe</button>
                             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={receipeDeleteModal} center>
                                 <div className='modal-container'>
-                                    <h2>Do you want to delete <span style={{ color: 'red' }}>{receipeObj.title}</span></h2>
+                                    <h2>Do you want to delete <span style={stil.span}>{receipeObj.title}</span></h2>
                                     <div className='button-group'>
                                         <button className="delete-btn" onClick={() => {
                                             setReceipeDeleteModal(false);

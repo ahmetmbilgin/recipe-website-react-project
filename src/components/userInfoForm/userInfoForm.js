@@ -1,8 +1,8 @@
-import './style.css'
+import React, { useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import RestApi from "../../RestApi";
-import React, { useState } from "react";
 import Spinner from '../spinner/Spinner';
+import './style.css';
 
 const UserInfoForm = ({ user }) => {
 

@@ -70,7 +70,7 @@ const ReceipeCreator = ({ id }) => {
                     <input className='input-url' value={receipe.url} onChange={(e) => setReceipe(prevState => ({ ...prevState, url: e.target.value }))} />
                     {error.url ? null : <div className='error-message'>Enter an url</div>}
                 </label>
-                <button onClick={saveReceipe} className='save-button'>Save</button>
+                <button onClick={saveReceipe} className='save-button btn'>Save</button>
             </form>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={savingModal} center>
                 <h2>Receipe saving...</h2>

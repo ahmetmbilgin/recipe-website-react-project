@@ -18,6 +18,18 @@
     height: 42px;
 }
 
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
 .user-info-container {
     display: flex;
     flex-direction: column;

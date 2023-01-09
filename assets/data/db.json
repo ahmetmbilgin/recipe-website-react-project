@@ -17,26 +17,67 @@
       "id": 2
     }
   ],
-  "foods": [],
+  "foods": [
+    {
+      "title": "Patlıcan Salatası",
+      "description": "asdasdasdasd",
+      "type": "foods",
+      "url": "https://eksisozluk.com/asdasd--533213456",
+      "userID": 2,
+      "id": 1
+    },
+    {
+      "title": "Tavuk Sote",
+      "description": "Tavukları küçük küçük doğruyoruz.",
+      "type": "foods",
+      "url": "www.tavukcum.com",
+      "userID": 1,
+      "id": 2
+    },
+    {
+      "title": "Kuşbaşı Kebap",
+      "type": "foods",
+      "description": "Kuşbaşı Kebap",
+      "url": "Kuşbaşı Kebap",
+      "userID": 1,
+      "id": 3
+    }
+  ],
   "coffees": [
     {
-      "title": "Türk Kahvesi",
+      "title": "Türk Kahvesi11",
+      "description": "Kahveyi (ve eklediyseniz şekeri) su ile iyice ıslanacak ve çözünecek şekilde karıştırın. Cezveyi kısık ateşte üzerinde köpük oluşuncaya kadar kaynama derecesine yaklaşmasını gözleyin. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.\n\n\niyi\nsen",
       "type": "coffees",
-      "description": "Kahveyi (ve eklediyseniz şekeri) su ile iyice ıslanacak ve çözünecek şekilde karıştırın. Cezveyi kısık ateşte üzerinde köpük oluşuncaya kadar kaynama derecesine yaklaşmasını gözleyin. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.",
       "url": "https://i4.hurimg.com/i/hurriyet/75/750x0/5fca383fc9de3d05fc0dfd62.jpg",
       "userID": 2,
       "id": 1
+    },
+    {
+      "title": "kapiçino",
+      "description": "kapiçino",
+      "type": "coffees",
+      "url": "https://eksisozluk.com/asdasd--53321312345",
+      "userID": 2,
+      "id": 2
+    },
+    {
+      "title": "Sütlü çay",
+      "type": "coffees",
+      "description": "Sütlü çay",
+      "url": "Sütlü çay",
+      "userID": 1,
+      "id": 3
+    },
+    {
+      "title": "Kahverengi",
+      "type": "coffees",
+      "description": "Kahverengi",
+      "url": "Kahverengi",
+      "userID": 1,
+      "id": 4
     }
   ],
   "snacks": [
-    {
-      "title": "Fırında Falafel",
-      "type": "snacks",
-      "description": "Haşlanmış nohutları, zeytinyağını, baharatları, kuru soğanı ve sarımsağı el blenderi ile püre haline getirin. İçine ince doğranmış maydanoz, galeta unu ve yumurtayı da ekleyin ve güzelce yoğurun. Hazırladığınız harçtan cevizden biraz daha irice parçalar kopartın elinizle yuvarlayın. Hafifçe yassılaştırıp yağlı kâğıt serilmiş bir fırın tepsisine dizin. Önceden ısıtılmış 180 derece fırında üstleri hafifçe kızarana dek, kontrolü olarak yaklaşık 25 dakika kadar pişirin. Fırından aldıktan sonra ılık ılık servis edin.  Afiyetler olsun!",
-      "url": "https://cdn.yemek.com/mnresize/1250/833/uploads/2016/08/firinda-falafel-one-cikan.jpg",
-      "userID": 1,
-      "id": 1
-    },
     {
       "title": "Patates Kroket",
       "type": "snacks",
@@ -44,6 +85,22 @@
       "url": "https://cdn.yemek.com/mnresize/1250/833/uploads/2014/06/patates-kroket-one-cikan.jpg",
       "userID": 2,
       "id": 2
+    },
+    {
+      "title": "Ekmek arası Köfte",
+      "type": "snacks",
+      "description": "Ekmek arası Köfte",
+      "url": "Ekmek arası Köfte",
+      "userID": 1,
+      "id": 3
+    },
+    {
+      "title": "Sosili Sandiviç",
+      "description": "Sosili Sandiviç",
+      "url": "Sosili Sandiviç",
+      "type": "snacks",
+      "userID": 1,
+      "id": 4
     }
   ]
 }

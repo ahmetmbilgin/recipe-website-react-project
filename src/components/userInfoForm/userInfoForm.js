@@ -46,14 +46,18 @@ const UserInfoForm = ({ user }) => {
             }}>Save</button>
             <button className="delete-account-btn" onClick={(e) => setDeletingModal(true)}>Delete Account</button>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={deletingModal} center>
-                <h2>Do you want to delete your account ?</h2>
-                <button className="delete-btn" onClick={() => {
-                    RestApi.changeUser({}, user.id);
-                    localStorage.clear();
-                }}>
-                    <a href="/">Delete</a>
-                </button>
-                <button className="cancel-btn" onClick={() => setDeletingModal(false)}>Cancel</button>
+                <div className='modal-container'>
+                    <h2>Do you want to delete your account ?</h2>
+                    <div className='button-group'>
+                        <button className="delete-btn" onClick={() => {
+                            RestApi.changeUser({}, user.id);
+                            localStorage.clear();
+                        }}>
+                            <a href="/">Delete</a>
+                        </button>
+                        <button className="cancel-btn" onClick={() => setDeletingModal(false)}>Cancel</button>
+                    </div>
+                </div>
             </Modal>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={savingModal} center>
                 <h2>Saving changes...</h2>

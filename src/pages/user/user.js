@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { useParams } from "react-router-dom";
+import EditableReceipeForm from "../../components/editableReceipeForm/EditableReceipeForm";
 import ReceipeCreator from "../../components/receipeForm/ReceipeCreator";
 import Spinner from "../../components/spinner/Spinner";
 import UserInfoForm from "../../components/userInfoForm/userInfoForm";
@@ -47,6 +48,7 @@ const User = () => {
                 })
             })
             .catch(error => alert(error));
+        console.log(receipeList);
     }
 
     useEffect(() => {
@@ -66,7 +68,6 @@ const User = () => {
                         <div className="username">{username}</div>
                         <button onClick={() => {
                             getUserReceipes();
-                            console.log(receipeList);
                             setSettings(false);
                             setCreateReceipe(false);
                             setDashboard(true);
@@ -86,7 +87,7 @@ const User = () => {
                         }}>Settings</button>
                     </div>
                     <div className="content">
-                        {dashboard ? receipeList.map((obj, index) => <div key={index}>{obj.title}</div>) : null}
+                        {dashboard ? receipeList.map((receipeObj, index) => <EditableReceipeForm key={index} receipeObj={receipeObj} />) : null}
                         {createReceipe ? <ReceipeCreator id={user.id} /> : null}
                         {settings ? <UserInfoForm user={user} /> : null}
                     </div>

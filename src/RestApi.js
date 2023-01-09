@@ -28,5 +28,13 @@ class RestApi {
         await axios.post(`${url}/${type}`, receipeObject);
     }
 
+    async changeReceipe(foodtype, id, receipeObject) {
+        await axios.put(`${url}/${foodtype}/${id}`, receipeObject);
+    }
+
+    async deleteReceipe(foodtype, id) {
+        await axios.delete(`${url}/${foodtype}/${id}`);
+    }
+
 }
 export default new RestApi();

@@ -15,6 +15,17 @@
       "surname": "telli",
       "email": "ftelli@yahoo.com",
       "id": 2
+    },
+    {
+      "username": "tugral123",
+      "password": "123",
+      "name": "Hicran",
+      "surname": "Ertuğral",
+      "email": "hicraner@gmail.com",
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "foods": [
@@ -41,6 +52,38 @@
       "url": "https://www.biadana.com/uploads/biadana.com/2018/10/Antep-Terbiyeli-Ku%C5%9Fba%C5%9F%C4%B1-Kebap-Tike.jpg",
       "userID": 1,
       "id": 3
+    },
+    {
+      "title": "Patatesli Havuçlu Bezelye Yemeği",
+      "description": "- Malzemeler -\n2 adet büyük boy patates\n1 adet büyük boy havuç\n1 kilogram ayıklanmış bezelye\n2 adet küçük boy soğan\n1 yemek kaşığı domates salçası\n2,5 çay kaşığı tuz\n2 tatlı kaşığı pul biber\n2,5 su bardağı sıcak su\nAz sıvı yağ\n\nPatatesli Havuçlu Bezelye Yemeği Tarifi Nasıl Yapılır?\n\nSoğanları yemeklik doğrayıp, az sıvı yağda (3-4 kaşık) kavurun.\nPatatesleri ve havuçları küçük küpler halinde doğrayın.\nSoğan kavrulunca, salçayı ekleyip birkaç dakika karıştırın.\nPatates, havuç ve bezelyeleri ekleyin.\nTuzunu ve pul biberini de atıp, birkaç dakika daha karıştırın.\nSıcak suyu ekleyin ve kısık ateşte, 40 dakika kadar yemeğinizi pişirin.",
+      "url": "https://i.nefisyemektarifleri.com/2014/05/patatesli-havuclu-bezelye-yemegi-tarifi-fotografi-3.jpg",
+      "type": "foods",
+      "userID": 3,
+      "id": 4
+    },
+    {
+      "title": "Fırında Patlıcan Oturtma",
+      "type": "foods",
+      "description": "- Malzemeler -\nYarım kg dana kıyma\n3 yemek kaşığı sıvı yağ\n4 adet patlıcan\n1 büyük kuru soğan\n2 diş sarımsak\n2 adet domates\n1 adet kapya kırmızı biber\n1 çorba kaşığı domates salçası\n1,5 su bardağı sıcak su\nTuz, karabiber, kırmızı pul biber\n\nFırında Patlıcan Oturtma Tarifi Nasıl Yapılır?\n\nPatlıcanları önce alacalı soyalım. 1 parmak kalınlığında kesip 10 dk tuzlu suda bekletelim. Sonra iyice suyunu süzdürüp kızgın yağda kızartalım.\nAyrı bir tencere küp küp doğradığımız soğanı az yağla kavuralım.\n2 diş sarımsağı ince ince doğrayıp, kıymayı ekleyip kavuralım.\n1 adet kapya kırmızı biberi, 2 adet domates doğrayıp ekleyip biraz kavuralım 1 yemek kaşığı salça.\nBaharatları tuzu da ekleyip kıymayı iyice kavuralım. 1,5 su bardağı sıcak suyu kıyma harcımıza ekleyelim.\nBorcama dizdiğimiz kızarmış patlıcanların üzerine kıymalı harcımızı eşit olarak dökelim.\nÜzerinede fırın kağıdı kapatıp önceden ısıttığımız 175 derece fırında 30 dakika kadar pişirelim.\nİlk sıcağı çıkınca yanına nefis bir pirinç pilavı ile servis edebiliriz. Afiyetler olsun.",
+      "url": "https://i.nefisyemektarifleri.com/2023/01/05/firinda-patlican-oturtma.jpg",
+      "userID": 3,
+      "id": 5
+    },
+    {
+      "title": "Sucuklu Kuru Fasulye",
+      "type": "foods",
+      "description": "Malzemeler\n2 su bardağı fasulye\n2 adet soğan\nSucuk\n2 yemek kaşığı salça\nTuz\nPulbiber\nKarabiber\nSu\nSıvıyağ\n\nSucuklu Kuru Fasulye Tarifi Nasıl Yapılır?\n\nFasulyeyi suyla düdüklü tenceremizde 20 dk kadar haşlıyoruz.\nHaşlandıktan sonra süzüyoruz.\nSoğan ve sucuğu küp şeklinde doğruyoruz.\nSıvı yağda salça ile birlikte kavuruyoruz .\nArdından fasulyeyi ekleyip bir iki karıştırdıktan sonra sıcak suyu ilave edip kapağını kapatıyoruz.\n30 dk kadar daha pişirip servis ediyoruz.Afiyet olsun.",
+      "url": "https://i.nefisyemektarifleri.com/2022/12/27/sucuklu-kuru-fasulye.jpg",
+      "userID": 3,
+      "id": 6
+    },
+    {
+      "title": "Kıymalı Patates Yemeği",
+      "type": "foods",
+      "description": "Malzemeler\n6-7 adet patates\n250 gram kıyma\n2 adet kuru soğan\n3 adet yeşil biber\n1,5 yemek kaşığı domates salçası\n2 dış sarımsak\n3-4 su bardağı sıcak su\n1 çay bardağı yarım sıvı yağ\n1 çay kaşığı karabiber\n1 tatlı kaşığı tuz\n\nKıymalı Patates Yemeği Tarifi Nasıl Yapılır?\n\nPatatesleri soyup suda bekletiyoruz.\nSoğanları küp küp doğruyoruz.\nTencereye sıvı yağ ve kıymayı ekleyip karıştırıyoruz.\nSoğan, doğranmış yeşil biberleri ekleyip kavuruyoruz.\nDomates salçası, tuz ,karabiber ve rendelenmiş sarımsak ekliyoruz.\nPatatesleri doğrayıp üzerine ekliyoruz.\nSıcak suyuda ekleyip yumuşayana kadar pişiriyoruz. Dinlendirip servis edebilirsiniz. Afiyet olsun.",
+      "url": "https://i.nefisyemektarifleri.com/2022/12/25/kiymali-patates-yemegi.jpg",
+      "userID": 4,
+      "id": 7
     }
   ],
   "drinks": [
@@ -59,6 +102,38 @@
       "url": "https://i.lezzet.com.tr/images-xxlarge-secondary/cappuccino-nedir-nasil-yapilir-f2999f21-f9b0-4dd7-9a39-9f42b8ebfee0.jpg",
       "userID": 2,
       "id": 2
+    },
+    {
+      "title": "Cool Lime",
+      "type": "drinks",
+      "description": "İlk olarak nane yapraklarını bir kaseye alın ve ayıklamaya başlayın.\nLimonların kabuklarını soyun ve nanelerin yanına koyun.\nToz şekeri de kasenin içerisine ekleyin. Nane ve limonu şeker ile ovalayın.\nArdından limonların suyunu sıkın ve kasenin içerisine 5 bardak su ekleyin.\nŞekerler eriyinceye kadar karıştırın. Kasenin içindekileri süzgeç yardımıyla süzün ve boş bir kaba aktarın.\nBardaklara servis ederken üzerine buz parçaları ekleyin. Afiyet olsun.",
+      "url": "https://i.lezzet.com.tr/images-xxlarge-recipe/cool-lime-5ed9532e-68a9-467a-a957-2f2d73372360.jpg",
+      "userID": 1,
+      "id": 3
+    },
+    {
+      "title": "Karpuzlu Limonata",
+      "type": "drinks",
+      "description": "- MALZEMELER -\n500 gr dilimlenmiş karpuz.\n2 limonun suyu.\n1 limon kabuğu rendesi.\n6 tatlı kaşığı bal (damak zevkinize göre değiştirebilirsiniz).\n\nTüm malzemeleri blenderda çalıştırıp tel süzgeç yardımıyla süzün.\nBuzdolabında soğuttuktan sonra servis edin.\nAfiyet olsun :)",
+      "url": "https://i.lezzet.com.tr/images-xxlarge-recipe/karpuzlu-limonata-5ee2aa41-f1db-4e13-a63c-ad675dbdef2b.jpg",
+      "userID": 1,
+      "id": 4
+    },
+    {
+      "title": "Soğuk Mavi Çay",
+      "type": "drinks",
+      "description": "Demliğe önce bitkileri daha sonra sıcak suyu ilave edin ve demlenmeye bırakın.\nBitki suya rengini verdikten sonra 2 damla vanilya özütü ekleyin ve çayı soğumaya bırakın.\nÇay soğuduktan sonra dilediğiniz miktarda buz ile servis edin.\nSoğuk mavi çay, günde en fazla 2 fincan içilmelidir. Özellikle yemeklerden bir saat sonra içmeniz önerilmektedir. \nHamileler, emziren anneler, kronik hastalar ve hassas bünyeler bitki özlü ürünleri tüketmeden önce mutlaka doktora danışmalıdır.",
+      "url": "https://i.lezzet.com.tr/images-xxlarge-recipe/soguk-mavi-cay-7b75ad2f-7ff9-4a08-b828-5a99692ccd4f.jpg",
+      "userID": 3,
+      "id": 5
+    },
+    {
+      "title": "Soğuk Kahve",
+      "description": "- Malzemeler -\n2 yemek kaşığı instant kahve\n1 su bardağı soğuk süt\n2 adet esmer şeker\nYarım çay bardağı soğuk su\n2-3 adet buz küpü\n\n- Servis için (İsteğe göre) -\nÇikolata rendesi\nÇilek\nKakao\n\nİlk olarak blender haznesine su, toz şeker ve instant kahveyi alarak karıştırın.\nKahveli karışım tamamen eriyinceye kadar blenderı çalıştırın.\nArdından blenderın içerisine soğuk sütü de ekleyerek köpükleninceye kadar karıştırın.\nSon olarak buz parçalarını da blendera aktarın ve buzlar parçalanıncaya kadar blenderı çalıştırın.\nHazırladığınız karışımı büyük bir bardağa dökün. Üzerine çikolata rendesi, kakao ve meyve dilimleri ekleyerek servis edebilirsiniz.\nSoğuk kahveyi ev yapımı tiramisu veya ballı krepler ile birlikte tüketebilirsiniz. Afiyet olsun.",
+      "type": "drinks",
+      "url": "https://i.lezzet.com.tr/images-xxlarge-recipe/soguk-kahve-b4a7d7d1-4732-4921-ac65-c91774cb705a.jpg",
+      "userID": 3,
+      "id": 6
     }
   ],
   "snacks": [
@@ -85,6 +160,22 @@
       "url": "https://i.nefisyemektarifleri.com/2013/01/sosisli-sandvic.jpg",
       "userID": 1,
       "id": 4
+    },
+    {
+      "title": "Tepside Pratik Kumpir",
+      "type": "snacks",
+      "description": "Patatesleri haşlayıp ezin. İçine tereyağı, tuz ve 1 su bardağı rendelenmiş kaşar peynirini ekleyip karıştırın.\nPüreyi yapışmaması için yağlanmış ya da su ile ıslatılmış (ben ıslattım) borcama elinizle bastırarak her tarafa eşit gelecek şekilde yayın.\nAyrı bir tavada bir tatlı kaşığı salça ile halka halka doğranmış sosisleri soteleyin ve patatesin üzerine yayın.\nOnun üzerine halka halka doğranmış zeytinleri, kornişon turşu, mısır, havuç ve bezelye karışımını dökün.\nEn üstüne kalan kaşar peynirini serpiştirip 200 derece fırında kaşarlar eriyene kadar pişirin.\nKetçap ve mayonez eşliğinde servis edin. Afiyet Olsun.\nNot: Dışarıda yediğiniz kumpirlerden lezzet olarak hiçbir farkı yok. Kişi sayısına göre malzeme oranlarında ve yine tercihen malzeme çeşidinde değişiklik yapabilirsiniz. En üstüne kaşar koyup koymama konusunda da özgürsünüz. Sıcak servis yapmanızı tavsiye ederim. Sevgilerle.",
+      "url": "https://i.nefisyemektarifleri.com/2014/07/tepside-pratik-kumpir-foto.jpg",
+      "userID": 3,
+      "id": 5
+    },
+    {
+      "title": "Ev Yapımı Cips",
+      "description": "- Malzemeler -\n2 adet yufka\n2 yemek kaşığı domates salçası\n2 yemek kaşığı mısır unu\n1 çay bardağı sıvı yağ\n1 çay bardağı su\n1 küçük boy soğan\n1 diş sarımsak\n1 çay kaşığı nane\n1 çay kaşığı kimyon\n1 çay kaşığı kekik\n1 çay kaşığı pulbiber\n1 çay kaşığı tuz\n\nEv Yapımı Cips Tarifi Nasıl Yapılır?\nİlk olarak soğanı rendeleyerek suyunu alalım.\nSarımsağı iri olacak şekilde keselim.\nSalçası sos için tüm malzemeleri derince bir kapta güzelce karıştıralım.\n1 tane yufka alarak tezgaha serelim.\nYufkanın yarısına hazırladığımız sostan sürelim ve diğer yarısını üzerine kapatalım.\nD şekline gelen yufkamızın üzerine ve ters çevirerek altına da sos sürelim. Yani yufkamızın her yeri soslanmış olmalı.\nGüzelce soslanan yufkamızı önce kare kare olacak şekilde keselim. Daha sonra verev keserek üçgen dilimler elde edelim.\nYağlı kağıt serdiğimiz fırın tepsisine kestiğimiz üçgen yufkaları sıralayalım. 1 yufka 2 tepsiye sığıyor. Ben iki tepsiyi birlikte pişirdim. Nasıl pişirdiğimi daha detaylı bir şekilde yazının devamında bulabilirsiniz.\nÖnceden ısıttığımız 180 derece fırında 6-7 dakika fırınlayalım. Daha sonra fırın derecesini 120 dereye düşürerek yufkalar tamamen kuruyup çıtır çıtır olana kadar pişirin.\nSoğuyan cipslerimiz servise hazır. Güzel bir dip sos hazırlayarak afiyetle ve gönül rahatlığı ile tüketebilirsiniz :)",
+      "url": "https://i.nefisyemektarifleri.com/2018/01/19/ev-yapimi-cips-tarifi-videolu.jpg",
+      "type": "snacks",
+      "userID": 3,
+      "id": 6
     }
   ]
 }

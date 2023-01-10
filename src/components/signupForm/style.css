@@ -4,20 +4,26 @@
 }
 
 .form-container * {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 .form-container form {
-    width: 300px;
-    height: 450px;
+    width: 340px;
+    height: 550px;
     color: red;
     padding: 40px;
     border: 2px solid grey;
     background-color: #fbb360;
-    font-size: 12px;
+    font-size: 12px !important;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
+}
+
+.form-container form h2 {
+    font-size: 34px !important;
+    margin: 0 0 30px 0;
+    text-align: center;
 }
 
 .form-container .input-container {
@@ -36,6 +42,7 @@
     border-radius: 2px;
     border: none;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 .register-btn:hover {
@@ -51,8 +58,11 @@
     width: 250px;
     padding: 5px;
     font-size: 18px;
+    border-radius: 2px;
+    border: none;
 }
 
 .form-container input:focus {
-    border-color: #005499;
+    /* border-color: #005499; */
+    border: 1px solid #005499;
 }

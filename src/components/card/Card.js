@@ -5,11 +5,12 @@ import './style.scss';
 const Card = ({ receipeObj }) => {
 
     const [writer, setWriter] = useState('');
+    const [deletedUser, setDeletedUser] = useState('');
 
     useEffect(() => {
         RestApi.getUser(receipeObj.userID)
             .then(response => {
-                response.data.username ? setWriter(response.data.username.toUpperCase()) : setWriter('Unknown-Person');
+                response.data.username ? setWriter(response.data.username.toUpperCase()) : setDeletedUser('deleted user');
             })
             .catch(error => alert(error));
     });
@@ -27,7 +28,7 @@ const Card = ({ receipeObj }) => {
                         <p>{receipeObj.description}</p>
                     </div>
                     <h4>
-                        Writer : <span>{writer}</span>
+                        Writer : {writer ? <span>{writer}</span> : <span className='deleted-user-span'>{deletedUser}</span>}
                     </h4>
                 </figcaption>
             </figure>

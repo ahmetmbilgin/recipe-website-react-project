@@ -85,6 +85,7 @@
 }
 
 .popover__content {
+    font-size: 14px;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -92,12 +93,12 @@
     left: -90px;
     transform: translate(0, 10px);
     background-color: #5b3c55ce;
-    padding: 1.5rem;
+    padding: 24px 24px 8px 24px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     width: auto !important;
     border-radius: 10px;
     width: 220px;
-    height: 150px;
+    height: 178px;
     display: flex;
     flex-direction: column;
 }

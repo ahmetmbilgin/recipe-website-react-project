@@ -44,8 +44,8 @@ figure {
 
   &:hover {
     box-shadow:
-      0 14px 28px rgba(0, 0, 0, 0.25),
-      0 10px 10px rgba(0, 0, 0, 0.22);
+      20px 14px 28px rgba(0, 0, 0, 0.75),
+      20px 14px 28px rgba(0, 0, 0, 0.75);
 
     h1 {
       opacity: 0;
@@ -76,7 +76,7 @@ figure {
     opacity: 1;
     transform: scale(1);
     transition: 0.25s ease;
-    z-index: 999;
+    z-index: 5;
     -webkit-text-stroke: 1.2px rgba(12, 12, 12, 0.97);
   }
 
@@ -126,6 +126,10 @@ figure {
     span {
       color: #238551;
       font-weight: 600;
+    }
+
+    .deleted-user-span {
+      color:red !important;
     }
   }
 }

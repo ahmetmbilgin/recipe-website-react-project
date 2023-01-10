@@ -85,7 +85,7 @@ const User = () => {
                         }}>Settings</button>
                     </div>
                     <div className="content">
-                        {dashboard ? receipeList.map((receipeObj, index) => <EditableReceipeForm key={index} receipeObj={receipeObj} />) : null}
+                        {dashboard ? (receipeList.length > 0 ? receipeList.map((receipeObj, index) => <EditableReceipeForm key={index} receipeObj={receipeObj} />) : <h3>You do not have a saved recipe yet...</h3>) : null}
                         {createReceipe ? <ReceipeCreator id={user.id} /> : null}
                         {settings ? <UserInfoForm user={user} /> : null}
                     </div>

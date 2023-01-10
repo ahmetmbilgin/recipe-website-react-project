@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 400px;
+    height: 420px;
     padding: 20px;
 }
 
@@ -51,11 +51,6 @@
 
 .user-info-container button {
     margin: 5px;
-    width: 200px;
-    height: 40px;
-    border: none;
-    border-radius: 2px;
-    font-size: 16px;
 }
 
 .user-info-container .delete-account-btn {

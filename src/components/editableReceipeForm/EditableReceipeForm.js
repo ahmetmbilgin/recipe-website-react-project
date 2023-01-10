@@ -64,7 +64,7 @@ const EditableReceipeForm = ({ receipeObj }) => {
                                 <div className='modal-container'>
                                     <h2>Do you want to delete <span style={stil.span}>{receipeObj.title}</span></h2>
                                     <div className='button-group'>
-                                        <button className="delete-btn" onClick={() => {
+                                        <button className="cancel-btn" onClick={() => {
                                             setReceipeDeleteModal(false);
                                             setDeletingModal(true);
                                             RestApi.deleteReceipe(receipe.type, receipeObj.id)
@@ -73,11 +73,7 @@ const EditableReceipeForm = ({ receipeObj }) => {
                                                 setDeletingModal(false)
                                                 setFormIsDel(true)
                                             }, 1000)
-
-
-                                        }}>
-                                            <a>Delete</a>
-                                        </button>
+                                        }}>Delete</button>
                                         <button className="cancel-btn" onClick={() => setReceipeDeleteModal(false)}>Cancel</button>
                                     </div>
                                 </div>

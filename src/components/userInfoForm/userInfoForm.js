@@ -36,7 +36,7 @@ const UserInfoForm = ({ user }) => {
             <input
                 onChange={e => setCopyUser(prevState => ({ ...prevState, surname: e.target.value }))}
                 placeholder={user.surname} />
-            <button className="save-btn" onClick={() => {
+            <button className="save-button btn" onClick={() => {
                 if (Object.values(copyUser)) {
                     RestApi.changeUser({ ...user, ...copyUser }, user.id);
                     setSavingModal(true);
@@ -44,7 +44,7 @@ const UserInfoForm = ({ user }) => {
                     setCopyUser(null);
                 }
             }}>Save</button>
-            <button className="delete-account-btn" onClick={(e) => setDeletingModal(true)}>Delete Account</button>
+            <button className="delete-button btn" onClick={(e) => setDeletingModal(true)}>Delete Account</button>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={deletingModal} center>
                 <div className='modal-container'>
                     <h2>Do you want to delete your account ?</h2>

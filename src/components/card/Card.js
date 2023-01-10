@@ -9,20 +9,16 @@ const Card = ({ receipeObj }) => {
     useEffect(() => {
         RestApi.getUser(receipeObj.userID)
             .then(response => {
-                if (response.data.username) {
-                    setWriter(response.data.username.toUpperCase())
-                } else {
-                    setWriter('Unknown-Person')
-                }
+                response.data.username ? setWriter(response.data.username.toUpperCase()) : setWriter('Unknown-Person');
             })
             .catch(error => alert(error));
-    }, []);
+    });
 
     return (
         <div className='card-container'>
             <figure className="image-block">
                 <h1>{receipeObj.title}</h1>
-                <img src={receipeObj.url} alt="receipe picture" />
+                <img src={receipeObj.url} alt="receipe_picture" />
                 <figcaption>
                     <div>
                         <h3>

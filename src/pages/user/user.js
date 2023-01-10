@@ -10,7 +10,6 @@ import RestApi from "../../RestApi";
 import './style.css';
 
 const User = () => {
-
     const { username } = useParams();
     const [loading, setLoading] = useState(false);
     const [settings, setSettings] = useState(false);
@@ -48,7 +47,6 @@ const User = () => {
                 })
             })
             .catch(error => alert(error));
-        console.log(receipeList);
     }
 
     useEffect(() => {

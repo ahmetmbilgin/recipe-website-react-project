@@ -20,9 +20,9 @@
   "foods": [
     {
       "title": "Patlıcan Salatası",
-      "description": "asdasdasdasd",
+      "description": "Patlıcanları ince ince doğruyoruz :d",
       "type": "foods",
-      "url": "https://eksisozluk.com/asdasd--533213456",
+      "url": "https://eksisozluk.com/",
       "userID": 2,
       "id": 1
     },
@@ -56,7 +56,7 @@
       "title": "kapiçino",
       "description": "kapiçino",
       "type": "coffees",
-      "url": "https://eksisozluk.com/asdasd--53321312345",
+      "url": "https://eksisozluk.com/",
       "userID": 2,
       "id": 2
     },

@@ -91,7 +91,7 @@
     background-color: #5b3c55ce;
     padding: 1.5rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    width: auto;
+    width: auto !important;
     border-radius: 10px;
     width: 220px;
     height: 150px;

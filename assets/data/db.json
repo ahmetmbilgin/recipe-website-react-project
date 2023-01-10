@@ -20,61 +20,45 @@
   "foods": [
     {
       "title": "Patlıcan Salatası",
-      "description": "Patlıcanları ince ince doğruyoruz :d",
+      "description": "Patlıcanları ve biberleri közleyerek küçük küçük doğrayın,\nSarımsağı ezin,\nDereotunu ince ince kıyın,\nPatlıcan, biber, dere otu, yoğurt, sarımsak, sirke ve tuzu bir karıştırma kabına alıp harmanlayın,\nServis tabağına alıp zeytinyağ ve ceviz ile süsleyerek servis yapın.",
       "type": "foods",
-      "url": "https://eksisozluk.com/",
+      "url": "https://i.nefisyemektarifleri.com/2022/02/17/kozlenmis-patlican-salatasi-tarifi-2.jpg",
       "userID": 2,
       "id": 1
     },
     {
       "title": "Tavuk Sote",
-      "description": "Tavukları küçük küçük doğruyoruz.",
+      "description": "Tavuk etini kuşbaşı doğrayın.\nSoğanları yemeklik, biberleri julyen doğrayın, domatesleri de küp küp doğrayın.\nKısık ateşte tavukları arada karıştırarak kavurun.\nSuyunu biraz çektikten sonra soğanları ve ince kesilmiş sarımsağı ekleyin.\n1-2 dk kavurduktan sonra biberleri ilave edin.\nBiberler de sotelenince domatesi, salçayı, baharatları ve tuzu ekleyip pişirmeye devam edin.\nSon olarak 1 bardak suyu ekleyin ve etler pişene kadar kapağı kapalı bir şekilde pişirin.\nTavuk sote çok pratik bir yemek, isterseniz makarna ile de servis edebilirsiniz.",
       "type": "foods",
-      "url": "www.tavukcum.com",
+      "url": "https://cdn.ye-mek.net/App_UI/Img/out/650/2017/12/tavuk-sote-resimli-yemek-tarifi(12).jpg",
       "userID": 1,
       "id": 2
     },
     {
       "title": "Kuşbaşı Kebap",
+      "description": "Bir kaba et, kuyruk yağı, baharatları, rendelediğiniz sarımsakları, salçayı ekleyin. Yoğurdu da katın. Malzemelerin üzerinden yağ gezdirin. Elinizle yoğurup iyice avcarlayın. Etleri şişlere dizin, 2-3 etten sonra 1 kuyruk yağı olacak şekilde dizin. Sonra şişleri mangala koyup pişirmeye başlayın. Ben evde yaptığım ve balkonda da barbekümüz olmadığı için elektrikli barbeküde yaptım. Közdekinin tadını vermiyor ama yinede güzel oldu. İsterseniz yanına yeşil biber ve ikiye böldüğünüz domestesleri de şişe dizip pişirerek yanında servis edebilirsiniz. Afiyet olsun.",
       "type": "foods",
-      "description": "Kuşbaşı Kebap",
-      "url": "Kuşbaşı Kebap",
+      "url": "https://www.biadana.com/uploads/biadana.com/2018/10/Antep-Terbiyeli-Ku%C5%9Fba%C5%9F%C4%B1-Kebap-Tike.jpg",
       "userID": 1,
       "id": 3
     }
   ],
   "coffees": [
     {
-      "title": "Türk Kahvesi11",
-      "description": "Kahveyi (ve eklediyseniz şekeri) su ile iyice ıslanacak ve çözünecek şekilde karıştırın. Cezveyi kısık ateşte üzerinde köpük oluşuncaya kadar kaynama derecesine yaklaşmasını gözleyin. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.\n\n\niyi\nsen",
+      "title": "Türk Kahvesi",
+      "description": "Kahveyi (ve eklediyseniz şekeri) su ile iyice ıslanacak ve çözünecek şekilde karıştırın. Cezveyi kısık ateşte üzerinde köpük oluşuncaya kadar kaynama derecesine yaklaşmasını gözleyin. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.\n",
       "type": "coffees",
       "url": "https://i4.hurimg.com/i/hurriyet/75/750x0/5fca383fc9de3d05fc0dfd62.jpg",
       "userID": 2,
       "id": 1
     },
     {
-      "title": "kapiçino",
-      "description": "kapiçino",
+      "title": "Cappuccino",
+      "description": "Kolay ve bir o kadar pratik tarifler ile istediğiniz cappuccino tadını elde edebilirsiniz. Öncelikle bir kahve fincanı sütü kaynatın. Cezvenin içinde bir miktar süt bırakın. Sütün geri kalanını fincanın içine koyduğunuz şeker ve hazır kahve ile eritin. Cezvenin içerisinde kalan sütü blender ile çırpıp köpük hâline getirin ve fincanın üzerine ilave edin. Üzerine de hem görsel açıdan güzel görünmesi hem de tat olarak daha hoş olması için rendelenmiş çikolata parçacıkları serpin. Cappuccinonuz hazır. Afiyetle içebilirsiniz.",
       "type": "coffees",
-      "url": "https://eksisozluk.com/",
+      "url": "https://i.lezzet.com.tr/images-xxlarge-secondary/cappuccino-nedir-nasil-yapilir-f2999f21-f9b0-4dd7-9a39-9f42b8ebfee0.jpg",
       "userID": 2,
       "id": 2
-    },
-    {
-      "title": "Sütlü çay",
-      "type": "coffees",
-      "description": "Sütlü çay",
-      "url": "Sütlü çay",
-      "userID": 1,
-      "id": 3
-    },
-    {
-      "title": "Kahverengi",
-      "type": "coffees",
-      "description": "Kahverengi",
-      "url": "Kahverengi",
-      "userID": 1,
-      "id": 4
     }
   ],
   "snacks": [
@@ -87,18 +71,18 @@
       "id": 2
     },
     {
-      "title": "Ekmek arası Köfte",
+      "title": "Ekmek Arası Köfte",
+      "description": "Ekmeği için uygun bir yoğurma kabı içerisine un, tuz, şeker ve instant mayayı alarak karıştıralım. Orta kısmını havuz şeklinde açalım ve suyu bu kısma ekleyelim.\nKenarlardaki karışımı yavaş yavaş suya katalım ve hamurumuzu yoğurmaya başlayalım. Ele yapışmayan yumuşak kıvamlı bir hamur elde edelim.\nYoğurduğumuz hamurumuzun üzerini streçleyelim ve temiz bir bez ile örterek 30-40 dakika kadar mayalanmaya bırakalım.\nHamurumuz mayalanırken bizde köfte harcımızı hazırlayalım. Bunun için uygun bir kap içerisine kıyma,  rendelenmiş soğanı alalım.\nÜzerine ince kıyılmış maydanoz, yumurta,  tuz, pul biber, karabiber, kimyon, galeta unu ve ezilmiş sarımsağı de ilave ederek homojen bir kıvam alana kadar yoğuralım.\nHazır olan köfte harcımızdan bir parça koparalım ve elimizle yuvarlayıp avcumuzla bastırarak inceltelim. Tüm harcımız bitene kadar bu işleme devam edelim. Şekillendirdiğimiz köftelerimizi bir tabağa alalım ve üzerini streçleyerek 1 saat kadar dinlenmeye bırakalım.\nMayası gelen hamurumuzu unladığımız tezgah üzerine alarak toparlayalım.\nArdından hamurumuzu önce 2 eşit parçaya ardından 6 parçaya ayıralım ve beze haline getirelim.\nFırın tepsimize pişirme kağıdı yerleştirelim, hazırladığımız bezelerimizi fırın tepsimize aralıklı olarak yerleştirelim.\nBir kase içerisine aldığımız yoğurdun üzerine yumurta sarısını ekleyelim ve çırpalım. Bu karışımı bezelerimizin üzerine fırça yardımı ile her yerine gelecek şekilde sürelim.\nBezelerimizin üzerine elimizle bastırarak genişletelim, üzerine çörek otu ve susam serpiştirelim.\nHazırladığımız ekmeklerimizi önceden ısıttığımız 200°C fırında yaklaşık 25-30 dakika pişmeye bırakalım.\nEkmeklerimiz pişerken arasına koymak için soğan salatamızı da hazırlayalım. Bunun için piyazlık doğradığımız soğanlarımızın üzerine tuz serpiştirelim ve ovalım. Daha sonra süzgece alalım ve sudan geçirelim.\nDomatesimizin kabuğunu soyalım, küp küp doğrayalım. Maydanozu da ince bir şekilde kıyalım ve bunları da soğanların üzerine ilave edelim.\nSon olarak sumak ve tuzu da ilave edelim ve karıştıralım.\nPişen ekmeklerimizi fırından alalım ve ilk sıcaklığının çıkması için bekletelim.\nKöftelerimizi pişirmek için ızgara çizgili tavamızı ocağa alalım ve ısıtalım. Isınan tavamıza köftelerimizi alalım, her iki tarafını da güzelce pişirelim. Pişen köftelerimizi kağıt havlu serdiğimiz tabağa alalım.\nİlk sıcağı çıkan ekmeklerimizi ortadan iki keselim, tabana ilk olarak soğan salatasından yerleştirelim. Daha sonra köftemizden de yerleştirerek servis edelim. Afiyet olsun!",
       "type": "snacks",
-      "description": "Ekmek arası Köfte",
-      "url": "Ekmek arası Köfte",
+      "url": "https://i.nefisyemektarifleri.com/2021/06/12/evde-ekmek-arasi-kofte-yapimi.jpg",
       "userID": 1,
       "id": 3
     },
     {
       "title": "Sosili Sandiviç",
-      "description": "Sosili Sandiviç",
-      "url": "Sosili Sandiviç",
+      "description": "Salça, margarin ve unu tencerenize koyun.\nOrta ateşte bir iki dakika kadar pişirin.\nSıcak suyu ve tuzu da ilave edin.\nSalçalı suyunuz kaynayınca sosisleri içine koyun.\nYaklaşık 30 dakika kadar orta ateşte haşlayın.\nPişen sosislerinizin suyundan 1-2 yemek kaşığı kadar sandviç ekmeklerinizin içine gezdirin.\nSosislerinizi ekmeklerin arasına koyup ketçap, mayonez, hardal gibi istediğiniz sosları ekleyerek servis edin.\nDilerseniz içine kornişon turşu veya isteğinize göre malzemeler ekleyebilirsiniz. Afiyet olsun.",
       "type": "snacks",
+      "url": "https://i.nefisyemektarifleri.com/2013/01/sosisli-sandvic.jpg",
       "userID": 1,
       "id": 4
     }

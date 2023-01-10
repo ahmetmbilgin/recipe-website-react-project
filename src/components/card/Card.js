@@ -1,20 +1,38 @@
+import { useEffect, useState } from 'react';
+import RestApi from '../../RestApi';
 import './style.scss';
 
-const Card = ({ }) => {
+const Card = ({ receipeObj }) => {
+
+    const [writer, setWriter] = useState('');
+
+    useEffect(() => {
+        RestApi.getUser(receipeObj.userID)
+            .then(response => {
+                if (response.data.username) {
+                    setWriter(response.data.username.toUpperCase())
+                } else {
+                    setWriter('Unknown-Person')
+                }
+            })
+            .catch(error => alert(error));
+    }, []);
 
     return (
         <div className='card-container'>
-            <figure class="image-block">
-                <h1>The Beach Tavada Sosis</h1>
-                <img src={''} alt="receipe picture" />
+            <figure className="image-block">
+                <h1>{receipeObj.title}</h1>
+                <img src={receipeObj.url} alt="receipe picture" />
                 <figcaption>
                     <div>
                         <h3>
                             More Info
                         </h3>
-                        <p>{ }</p>
+                        <p>{receipeObj.description}</p>
                     </div>
-                    <h4>Writer : <span>{ }</span></h4>
+                    <h4>
+                        Writer : <span>{writer}</span>
+                    </h4>
                 </figcaption>
             </figure>
         </div>

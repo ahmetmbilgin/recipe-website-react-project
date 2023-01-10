@@ -17,6 +17,10 @@ $lg: new-breakpoint(min-width 1024px);
   outline: none;
 }
 
+.card-container {
+  height: 700px;
+}
+
 figure {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -67,7 +71,7 @@ figure {
     padding: 0;
     color: white;
     font-size: 40px;
-    font-weight: 100;
+    font-weight: 600;
     line-height: 1;
     opacity: 1;
     transform: scale(1);
@@ -78,6 +82,7 @@ figure {
   img {
     height: 100%;
     transition: 0.25s;
+    // width: 800px;
   }
 
   figcaption {
@@ -98,13 +103,15 @@ figure {
     transition: 0.5s;
 
     h3 {
-      margin: 0 0 20px;
+      margin: 0 0 25px;
       padding: 0;
     }
 
     p {
       font-size: 14px;
       line-height: 1.75;
+      height: 520px;
+      overflow-y: auto;
     }
 
     h4 {
@@ -113,7 +120,8 @@ figure {
     }
 
     span {
-      color: red;
+      color: #238551;
+      font-weight: 600;
     }
   }
 }

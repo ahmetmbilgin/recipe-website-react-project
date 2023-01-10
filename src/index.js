@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
 import './index.css';
-import Coffees from './pages/coffees';
+import Drinks from './pages/drinks';
 import Foods from './pages/foods';
 import HomePage from './pages/homePage';
 import NoPage from './pages/noPage';
@@ -20,7 +20,7 @@ root.render(
             <Route exact path="user/:username" element={<User />} />
             <Route exact path='signup' element={<Signup />} />
             <Route exact path='foods' element={<Foods />} />
-            <Route exact path='coffees' element={<Coffees />} />
+            <Route exact path='drinks' element={<Drinks />} />
             <Route exact path='snacks' element={<Snacks />} />
             <Route exact path="*" element={<NoPage />} />
         </Routes>

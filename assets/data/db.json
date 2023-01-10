@@ -43,11 +43,11 @@
       "id": 3
     }
   ],
-  "coffees": [
+  "drinks": [
     {
       "title": "Türk Kahvesi",
       "description": "Kahveyi (ve eklediyseniz şekeri) su ile iyice ıslanacak ve çözünecek şekilde karıştırın. Cezveyi kısık ateşte üzerinde köpük oluşuncaya kadar kaynama derecesine yaklaşmasını gözleyin. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.\n",
-      "type": "coffees",
+      "type": "drinks",
       "url": "https://i4.hurimg.com/i/hurriyet/75/750x0/5fca383fc9de3d05fc0dfd62.jpg",
       "userID": 2,
       "id": 1
@@ -55,7 +55,7 @@
     {
       "title": "Cappuccino",
       "description": "Kolay ve bir o kadar pratik tarifler ile istediğiniz cappuccino tadını elde edebilirsiniz. Öncelikle bir kahve fincanı sütü kaynatın. Cezvenin içinde bir miktar süt bırakın. Sütün geri kalanını fincanın içine koyduğunuz şeker ve hazır kahve ile eritin. Cezvenin içerisinde kalan sütü blender ile çırpıp köpük hâline getirin ve fincanın üzerine ilave edin. Üzerine de hem görsel açıdan güzel görünmesi hem de tat olarak daha hoş olması için rendelenmiş çikolata parçacıkları serpin. Cappuccinonuz hazır. Afiyetle içebilirsiniz.",
-      "type": "coffees",
+      "type": "drinks",
       "url": "https://i.lezzet.com.tr/images-xxlarge-secondary/cappuccino-nedir-nasil-yapilir-f2999f21-f9b0-4dd7-9a39-9f42b8ebfee0.jpg",
       "userID": 2,
       "id": 2

@@ -3,13 +3,13 @@ import Card from "../components/card/Card";
 import RestApi from '../RestApi';
 import './pages.css';
 
-const Coffees = () => {
+const Drinks = () => {
 
     const [receipeList, setReceipeList] = useState([]);
 
     useEffect(() => {
         setReceipeList([]);
-        RestApi.getReceipe('coffees')
+        RestApi.getReceipe('drinks')
             .then(response => setReceipeList(response.data))
     }, []);
 
@@ -20,4 +20,4 @@ const Coffees = () => {
     )
 }
 
-export default Coffees;
+export default Drinks;

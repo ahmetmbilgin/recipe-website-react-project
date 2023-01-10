@@ -29,7 +29,7 @@ const User = () => {
                 })
             })
             .catch(error => alert(error));
-        RestApi.getReceipe('coffees')
+        RestApi.getReceipe('drinks')
             .then(response => {
                 response.data.forEach(object => {
                     if (object.userID === user.id) {

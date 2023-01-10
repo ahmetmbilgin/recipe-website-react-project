@@ -49,14 +49,14 @@ const NavBar2 = () => {
             <nav className='navbar'>
                 <div>
                     <div className='icon-mark'>
-                        Food<span>Receipe</span>.com
+                        Food<span>Receipe</span>
                     </div>
                     <div className='button-group'>
                         <ul>
                             <li><Link to='/'>Home</Link></li>
                             <span className='divider'></span>
                             <li><Link to="/foods">Foods</Link></li>
-                            <li><Link to='coffees'>Coffees</Link></li>
+                            <li><Link to='drinks'>Drinks</Link></li>
                             <li><Link to='snacks'>Snacks</Link></li>
                             <span className='divider'></span>
                             {correctUser

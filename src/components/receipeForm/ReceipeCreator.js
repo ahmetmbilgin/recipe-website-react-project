@@ -48,9 +48,9 @@ const ReceipeCreator = ({ id }) => {
                         Food
                     </label>
                     <label>
-                        <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'coffees' }))}
+                        <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'drinks' }))}
                             name="type-of-food" type="radio" />
-                        Coffee
+                        Drink
                     </label>
                     <label>
                         <input onChange={(e) => setReceipe(prevState => ({ ...prevState, type: 'snacks' }))}

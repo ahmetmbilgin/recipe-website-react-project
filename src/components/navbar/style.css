@@ -22,14 +22,17 @@
     display: flex;
     align-items: center;
     text-align: center;
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 42px;
+    font-weight: 800;
     letter-spacing: 2px;
     color: #e7fcf0;
+    text-shadow: 5px 5px rgba(92, 71, 71, 0.878);
+    -webkit-text-stroke: 1.3px rgba(12, 12, 12, 0.97);
 }
 
 .navbar .icon-mark span {
     color: #2a17d2d9;
+    -webkit-text-stroke: 0.7px rgba(195, 209, 209, 0.97);
 }
 
 .navbar .button-group {

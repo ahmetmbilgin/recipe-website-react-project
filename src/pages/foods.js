@@ -1,10 +1,12 @@
-import React from "react";
+import Card from "../components/card/Card";
+import './pages.css';
 
 const Foods = () => {
+    
     return (
-        <>
-            <h1>Foods</h1>
-        </>
+        <div className="card-list">
+
+        </div>
     )
 }
 

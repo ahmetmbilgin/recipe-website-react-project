@@ -18,37 +18,6 @@ const User = () => {
     const [user, setUser] = useState(null);
     const [receipeList, setReceipeList] = useState([]);
 
-    const getUserReceipes = () => {
-        setReceipeList([]);
-        RestApi.getReceipe('foods')
-            .then(response => {
-                response.data.forEach(object => {
-                    if (object.userID === user.id) {
-                        setReceipeList(prevState => [...prevState, object])
-                    }
-                })
-            })
-            .catch(error => alert(error));
-        RestApi.getReceipe('drinks')
-            .then(response => {
-                response.data.forEach(object => {
-                    if (object.userID === user.id) {
-                        setReceipeList(prevState => [...prevState, object])
-                    }
-                })
-            })
-            .catch(error => alert(error));
-        RestApi.getReceipe('snacks')
-            .then(response => {
-                response.data.forEach(object => {
-                    if (object.userID === user.id) {
-                        setReceipeList(prevState => [...prevState, object])
-                    }
-                })
-            })
-            .catch(error => alert(error));
-    }
-
     useEffect(() => {
         setLoading(true);
         setTimeout(() => setLoading(false), 1000);
@@ -57,13 +26,26 @@ const User = () => {
             .catch(error => alert(error));
     }, [])
 
+    const getUserReceipes = () => {
+        setReceipeList([]);
+        RestApi.getReceipe('foods')
+            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+
+        RestApi.getReceipe('drinks')
+            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+
+        RestApi.getReceipe('snacks')
+            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+    }
+
     return (
         <>
             {localStorage.getItem("username") === username
-                ?
-                <div className="account-page">
+                ? <div className="account-page">
                     <div className="side-menu">
-                        <div className="username">{username}</div>
                         <button onClick={() => {
                             getUserReceipes();
                             setSettings(false);
@@ -85,7 +67,12 @@ const User = () => {
                         }}>Settings</button>
                     </div>
                     <div className="content">
-                        {dashboard ? (receipeList.length > 0 ? receipeList.map((receipeObj, index) => <EditableReceipeForm key={index} receipeObj={receipeObj} />) : <h3>You do not have a saved recipe yet...</h3>) : null}
+                        {dashboard ? null : createReceipe ? null : settings ? null : <div className="welcome">Welcome <span className="username-span">{username}</span></div>}
+                        {dashboard
+                            ? ((receipeList.length > 0)
+                                ? receipeList.map((receipeObj, index) => <EditableReceipeForm key={index} receipeObj={receipeObj} />)
+                                : <h3>You do not have a saved recipe yet...</h3>)
+                            : null}
                         {createReceipe ? <ReceipeCreator id={user.id} /> : null}
                         {settings ? <UserInfoForm user={user} /> : null}
                     </div>
@@ -94,7 +81,9 @@ const User = () => {
                         <Spinner />
                     </Modal>
                 </div>
-                : <h1>You are not authorized !</h1>}
+                : <h1>
+                    You are not authorized !
+                </h1>}
         </>
     )
 }

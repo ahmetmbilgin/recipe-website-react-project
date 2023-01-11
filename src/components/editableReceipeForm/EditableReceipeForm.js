@@ -24,11 +24,18 @@ const EditableReceipeForm = ({ receipeObj }) => {
             setSavingModal(true);
             setError({ title: true, type: true, description: true, url: true });
             RestApi.changeReceipe(receipeObj.type, receipeObj.id, receipe)
-                .catch(error => alert(error))
-                .finally(() => {
-                    setSavingModal(false);
-                });
+                .finally(() => setSavingModal(false));
         }
+    }
+
+    const deleteReceipe = (e) => {
+        setReceipeDeleteModal(false);
+        setDeletingModal(true);
+        RestApi.deleteReceipe(receipe.type, receipeObj.id)
+        setTimeout(() => {
+            setDeletingModal(false)
+            setFormIsDel(true)
+        }, 1000)
     }
 
     return (
@@ -64,16 +71,7 @@ const EditableReceipeForm = ({ receipeObj }) => {
                                 <div className='modal-container'>
                                     <h2>Do you want to delete <span style={stil.span}>{receipeObj.title}</span></h2>
                                     <div className='button-group'>
-                                        <button className="cancel-btn" onClick={() => {
-                                            setReceipeDeleteModal(false);
-                                            setDeletingModal(true);
-                                            RestApi.deleteReceipe(receipe.type, receipeObj.id)
-                                                .catch(error => alert(error))
-                                            setTimeout(() => {
-                                                setDeletingModal(false)
-                                                setFormIsDel(true)
-                                            }, 1000)
-                                        }}>Delete</button>
+                                        <button className="delete cancel-btn" onClick={deleteReceipe}>Delete</button>
                                         <button className="cancel-btn" onClick={() => setReceipeDeleteModal(false)}>Cancel</button>
                                     </div>
                                 </div>

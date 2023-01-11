@@ -18,9 +18,7 @@ const ReceipeCreator = ({ id }) => {
             setSavingModal(true);
             setError({ title: true, type: true, description: true, url: true });
             setReceipe({ title: '', description: '', url: '', type: '' });
-
             RestApi.saveReceipe({ ...receipe, userID: id }, receipe.type)
-                .catch(error => alert(error))
                 .finally(() => {
                     setSavingModal(false);
                     setSavingSuccessModal(true);

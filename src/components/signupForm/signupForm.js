@@ -42,7 +42,6 @@ const SignupForm = () => {
                     setUsernameExis(true);
                     setLoading(true);
                     RestApi.saveUser(newUser)
-                        .catch(error => alert(error))
                         .finally(() => {
                             setNewUser({ username: '', password: '', name: '', surname: '', email: '' });
                             setSignInError({ username: true, password: true, name: true, surname: true, email: true });

@@ -19,14 +19,14 @@ const Foods = () => {
     }, []);
 
     return (
-        <>
+        <div className="container">
             <input className="search-input" placeholder="Search..." type="text" onChange={(e) => searchFood(e.target.value)} />
             <div className="card-list">
                 {filteredReceipeList.length > 0
                     ? <>{filteredReceipeList.map((receipeObj, index) => <Card key={index} receipeObj={receipeObj} />)}</>
                     : <>{receipeList.map((receipeObj, index) => <Card key={index} receipeObj={receipeObj} />)} </>}
             </div>
-        </>
+        </div>
     )
 }
 

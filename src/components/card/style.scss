@@ -33,7 +33,6 @@ figure {
   align-items: center;
   justify-content: center;
   width: 375px;
-  min-width: 375px;
   height: 667px;
   border-radius: 10px;
   box-shadow:
@@ -83,7 +82,8 @@ figure {
   img {
     height: 100%;
     transition: 0.25s;
-    // width: 800px;
+    width: 800px;
+    box-sizing: border-box;
   }
 
   figcaption {
@@ -111,7 +111,7 @@ figure {
     p {
       font-size: 14px;
       line-height: 1.75;
-      height: 520px;
+      height: auto;
       overflow-y: auto;
     }
 
@@ -132,4 +132,28 @@ figure {
       color: #FB3640 !important;
     }
   }
+}
+
+@media screen and (max-width: 839px) {
+  figure {
+    height: 445px;
+    width: 250px;
+
+    &:hover {
+      figcaption {
+        overflow-y: auto;
+      }
+    }
+
+    figcaption {
+      p {
+        overflow-y: hidden;
+      }
+    }
+  }
+
+  .card-container {
+    height: 470px;
+  }
+
 }

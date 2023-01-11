@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card-list {
     display: flex;
     flex-wrap: wrap;
@@ -5,19 +11,23 @@
 }
 
 .search-input {
-    z-index: 50;
-    position: fixed;
+    margin-top: 20px;
     padding: 5px 10px;
-    top: 14px;
-    left: 700px;
     border: 2px solid #30011E;
-    background-color: white;
+    color: #30011E;
     font-size: 20px;
     border-radius: 2px;
-    width: 350px;
+    width: 15rem;
     font-weight: 400;
 }
 
 .search-input:focus {
-    border-color: #C84630;
+    border-color: #30011E;
+}
+
+@media screen and (max-width: 839px) {
+    .card-list {
+        padding: 10px;
+        flex-direction: column;
+    }
 }

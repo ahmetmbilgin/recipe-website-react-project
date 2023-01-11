@@ -18,7 +18,7 @@
     width: 250px;
     height: 100%;
     padding-top: 40px;
-    background-color: #e7fcf0;
+    background-color: rgba(212, 101, 73, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;

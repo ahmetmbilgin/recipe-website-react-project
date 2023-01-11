@@ -97,7 +97,7 @@ figure {
     width: 100%;
     margin: 0;
     padding: 30px;
-    background-color: rgba(#5b3c55ce, 0.85);
+    background-color: rgba(#3D0B37, 0.85);
     box-shadow: 0 0 20px rgba(black, 0.4);
     color: white;
     line-height: 1;
@@ -118,18 +118,18 @@ figure {
     h4 {
       align-self: flex-end;
       font-weight: 400;
-      background-color: rgba(#1010103a, 0.8);
+      background-color: rgba(#000000, 0.7);
       border-radius: 4px;
       padding: 7px 10px;
     }
 
     span {
-      color: #238551;
+      color: #0CCE6B;
       font-weight: 600;
     }
 
     .deleted-user-span {
-      color:red !important;
+      color: #FB3640 !important;
     }
   }
 }

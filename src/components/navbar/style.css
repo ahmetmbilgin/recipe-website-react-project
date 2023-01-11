@@ -1,7 +1,7 @@
 .navbar {
     width: 100%;
     height: 66px;
-    background-color: #5b3c55ce;
+    background-color: #30011E;
     padding: 5px 20px;
     z-index: 10;
     position: sticky;
@@ -23,16 +23,16 @@
     align-items: center;
     text-align: center;
     font-size: 42px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 2px;
-    color: #e7fcf0;
-    text-shadow: 5px 5px rgba(92, 71, 71, 0.878);
-    -webkit-text-stroke: 1.3px rgba(12, 12, 12, 0.97);
+    color: #FB3640;
+    /* text-shadow: 5px 5px rgba(92, 71, 71, 0.878); */
+
 }
 
 .navbar .icon-mark span {
-    color: #2a17d2d9;
-    -webkit-text-stroke: 0.7px rgba(195, 209, 209, 0.97);
+    color: #FCF7F8;
+
 }
 
 .navbar .button-group {
@@ -92,7 +92,7 @@
     top: 50px;
     left: -90px;
     transform: translate(0, 10px);
-    background-color: #5b3c55ce;
+    background-color: #30011E;
     padding: 24px 24px 8px 24px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     width: auto !important;
@@ -138,61 +138,60 @@
 
 /* primary button  */
 .primary {
-    background-color: #2d72d2;
+    background-color: #01BAEF;
 
 }
 
 .primary:hover {
-    background-color: #215db0 !important;
+    background-color: #02abdade !important;
 }
 
 /* warning button  */
 .warning {
-    background-color: #fbb360;
+    background-color: #FFBC42;
 }
 
 .warning:hover {
-    background-color: #f9ad56cc !important;
+    background-color: #e9ad3ce3 !important;
 }
 
 .warning:active {
-    background-color: rgba(241, 140, 24, 0.732) !important;
+    background-color: #b3842de0 !important;
 }
 
 /* success button */
 
 .success {
-    background-color: #238551;
+    background-color: #0CCE6B;
 }
 
 .success:hover {
-    background-color: #157040dd !important;
+    background-color: #0abc60df !important;
 }
 
 .success:active {
-    background-color: #195f39d9 !important;
+    background-color: #0ab15bcf !important;
 }
 
 /* danger button */
 
 .danger {
-    background-color: #cd4246;
+    background-color: #FB3640;
 }
 
 .danger:hover {
-    background-color: #ab3437e4 !important;
+    background-color: #cf2d35e5 !important;
 }
 
 .danger:active {
-    background-color: #872e31da !important;
+    background-color: #ab242bd7 !important;
 }
 
 /* input */
 
 .input {
-    background: rgba(17, 20, 24, 0.3);
+    background: #FFFFFC;
     box-shadow: 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), 0 0 0 0 rgb(76 144 240 / 0%), inset 0 0 0 1px rgb(255 255 255 / 20%), inset 0 -1px 1px 0 #8f99a8;
-    color: #f6f7f9;
     position: relative;
     width: 200px;
     border: none;

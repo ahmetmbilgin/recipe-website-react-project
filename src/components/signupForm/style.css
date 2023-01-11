@@ -10,14 +10,14 @@
 .form-container form {
     width: 340px;
     height: 550px;
-    color: red;
+    color: #FB3640;
     padding: 40px;
     border: 2px solid grey;
-    background-color: #fbb360;
+    background-color: #FFBC42;
     font-size: 12px !important;
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 30px;    
 }
 
 .form-container form h2 {
@@ -63,6 +63,5 @@
 }
 
 .form-container input:focus {
-    /* border-color: #005499; */
     border: 1px solid #005499;
 }

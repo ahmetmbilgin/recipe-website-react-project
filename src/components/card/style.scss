@@ -111,7 +111,7 @@ figure {
     p {
       font-size: 14px;
       line-height: 1.75;
-      height: auto;
+      height: 470px;
       overflow-y: auto;
     }
 
@@ -148,6 +148,7 @@ figure {
     figcaption {
       p {
         overflow-y: hidden;
+        height: auto;
       }
     }
   }
@@ -155,5 +156,4 @@ figure {
   .card-container {
     height: 470px;
   }
-
 }

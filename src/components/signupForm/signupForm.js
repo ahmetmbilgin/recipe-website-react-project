@@ -57,46 +57,44 @@ const SignupForm = () => {
         } else alert('Please check your password');
     }
     return (
-        <>
-            <div className="form-container">
-                <form>
-                    <h2>Registration</h2>
-                    <div className="input-container">
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))}
-                            value={newUser.name} placeholder="Name" type="text" />
-                        {signInError.name ? null : <div>Please fill the blank</div>}
-                    </div>
-                    <div className="input-container">
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))}
-                            value={newUser.surname} placeholder="Surname" type="text" />
-                        {signInError.surname ? null : <div>Please fill the blank</div>}
-                    </div>
-                    <div className="input-container">
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))}
-                            value={newUser.email} placeholder="Email" type="text" />
-                        {signInError.email ? null : <div>Please fill the blank</div>}
-                    </div>
-                    <div className="input-container">
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))}
-                            value={newUser.username} placeholder="username" type="text" />
-                        {usernameExis ? null : <div>This username already taken !</div>}
-                        {signInError.username ? null : <div>Please fill the blank</div>}
-                    </div>
-                    <div className="input-container">
-                        <input onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))}
-                            value={newUser.password} placeholder="password" type="password" />
-                        {signInError.password ? null : <div>Please fill the blank</div>}
-                    </div>
-                    <div className="input-container">
-                        <input onChange={(e) => setVeriyfyPassword(e.target.value)}
-                            value={verifyPassword} placeholder="verify password" type="password" />
-                    </div>
-                    <button className="register-btn" onClick={(e) => {
-                        e.preventDefault();
-                        signup();
-                    }}>Register</button>
-                </form>
-            </div>
+        <div className="form-container">
+            <form>
+                <h2>Registration</h2>
+                <div className="input-container">
+                    <input onChange={(e) => setNewUser(prev => ({ ...prev, name: e.target.value }))}
+                        value={newUser.name} placeholder="Name" type="text" />
+                    {signInError.name ? null : <div>Please fill the blank</div>}
+                </div>
+                <div className="input-container">
+                    <input onChange={(e) => setNewUser(prev => ({ ...prev, surname: e.target.value }))}
+                        value={newUser.surname} placeholder="Surname" type="text" />
+                    {signInError.surname ? null : <div>Please fill the blank</div>}
+                </div>
+                <div className="input-container">
+                    <input onChange={(e) => setNewUser(prev => ({ ...prev, email: e.target.value }))}
+                        value={newUser.email} placeholder="Email" type="text" />
+                    {signInError.email ? null : <div>Please fill the blank</div>}
+                </div>
+                <div className="input-container">
+                    <input onChange={(e) => setNewUser(prev => ({ ...prev, username: e.target.value }))}
+                        value={newUser.username} placeholder="username" type="text" />
+                    {usernameExis ? null : <div>This username already taken !</div>}
+                    {signInError.username ? null : <div>Please fill the blank</div>}
+                </div>
+                <div className="input-container">
+                    <input onChange={(e) => setNewUser(prev => ({ ...prev, password: e.target.value }))}
+                        value={newUser.password} placeholder="password" type="password" />
+                    {signInError.password ? null : <div>Please fill the blank</div>}
+                </div>
+                <div className="input-container">
+                    <input onChange={(e) => setVeriyfyPassword(e.target.value)}
+                        value={verifyPassword} placeholder="verify password" type="password" />
+                </div>
+                <button className="register-btn" onClick={(e) => {
+                    e.preventDefault();
+                    signup();
+                }}>Register</button>
+            </form>
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
                 <h2>Registration in progress...</h2>
                 <Spinner />
@@ -104,7 +102,7 @@ const SignupForm = () => {
             <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading2} center>
                 <h2>Successful registration</h2>
             </Modal>
-        </>
+        </div>
     )
 }
 

@@ -1,0 +1,46 @@
+.main {
+    background-repeat: no-repeat;
+    height: 93vh;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Indie Flower';
+
+    * {
+        margin: 0;
+    }
+
+    .container {
+        gap: 30px;
+
+        h1 {
+            font-size: 75px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            width: 340px;
+
+            img {
+                width: 80px;
+                border-radius: 50%;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 24px;
+                display: inline-block;
+            }
+        }
+
+    }
+}

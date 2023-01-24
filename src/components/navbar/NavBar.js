@@ -31,7 +31,7 @@ const NavBar2 = () => {
             setLoading(true);
             setTimeout(() => setLoading(false), 1000);
             return true;
-        } else { 
+        } else {
             return false;
         }
     }
@@ -90,7 +90,7 @@ const NavBar2 = () => {
                                                 onChange={(e) => setUser(prevState => ({ ...prevState, password: e.target.value }))} />
                                             {!userError.password && <div>Please fill the blank</div>}
                                         </div>
-                                        <Link to={filtering(user.username, user.password) && '/'}>
+                                        <Link to={filtering(user.username, user.password) && `/user/${user.username}`}>
                                             <button className='success enter-button' onClick={login}>Enter</button>
                                         </Link>
                                         {!userConfirm && <div>Wrong username or password!</div>}
@@ -105,10 +105,6 @@ const NavBar2 = () => {
                     </ul>
                 </div>
             </div>
-            <Modal closeOnEsc={false} closeOnOverlayClick={false} showCloseIcon={false} open={loading} center>
-                <h2>Welcome, wait a second</h2>
-                <Spinner />
-            </Modal>
         </nav>
     )
 }

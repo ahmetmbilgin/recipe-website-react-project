@@ -13,33 +13,39 @@ const User = () => {
     const { username } = useParams();
     const [loading, setLoading] = useState(false);
     const [settings, setSettings] = useState(false);
-    const [dashboard, setDashboard] = useState(false);
+    const [dashboard, setDashboard] = useState(true);
     const [createReceipe, setCreateReceipe] = useState(false);
     const [user, setUser] = useState(null);
     const [receipeList, setReceipeList] = useState([]);
+
+    const getUserReceipes = value => {
+        setReceipeList([]);
+        RestApi.getReceipe('foods')
+            .then(response => response.data.forEach(object => object.userID === value.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+
+        RestApi.getReceipe('drinks')
+            .then(response => response.data.forEach(object => object.userID === value.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+
+        RestApi.getReceipe('snacks')
+            .then(response => response.data.forEach(object => object.userID === value.id && setReceipeList(prevState => [...prevState, object])))
+            .catch(error => alert(error));
+    }
 
     useEffect(() => {
         setLoading(true);
         setTimeout(() => setLoading(false), 1000);
         RestApi.getAllUsers()
-            .then(response => setUser(...response.data.filter(obj => obj.username === localStorage.getItem("username"))))
-            .catch(error => alert(error));
+            .then(response => {
+                let filteredUser = response.data.filter(obj => obj.username === localStorage.getItem("username"))[0];
+                setUser(filteredUser);
+                getUserReceipes(filteredUser);
+            })
+            .catch(error => alert(error))
     }, [])
 
-    const getUserReceipes = () => {
-        setReceipeList([]);
-        RestApi.getReceipe('foods')
-            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
-            .catch(error => alert(error));
 
-        RestApi.getReceipe('drinks')
-            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
-            .catch(error => alert(error));
-
-        RestApi.getReceipe('snacks')
-            .then(response => response.data.forEach(object => object.userID === user.id && setReceipeList(prevState => [...prevState, object])))
-            .catch(error => alert(error));
-    }
 
     return (
         <>
@@ -47,7 +53,7 @@ const User = () => {
                 ? <div className="account-page">
                     <div className="side-menu">
                         <button onClick={() => {
-                            getUserReceipes();
+                            getUserReceipes(user);
                             setSettings(false);
                             setCreateReceipe(false);
                             setDashboard(true);
